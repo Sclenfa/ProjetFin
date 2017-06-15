@@ -14,9 +14,9 @@ _main:
     resource: routing.yml
 
 faire_play_accueil:
-    path: /home
+    path: /index
     defaults:
-        _controller: AppBundle:Advert:home
+        _controller: AppBundle:Advert:index
 
 faire_play_nosProjets:
    path: /nos-projets
