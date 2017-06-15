@@ -44,14 +44,14 @@ class AdvertController extends Controller {
     }
 
     /**
-     * @Route("/contact", name="projets")
+     * @Route("/contact", name="nous-contacter")
      */
     public function contactAction(){
         return $this->render('nous_contacter.html.twig');
     }
 
     /**
-     * @Route("/projets{id}", name="fiche-projets")
+     * @Route("/projets/{id}", name="fiche-projets")
      */
     public function projetsAction($id){
         return $this->render('fiche_projet.html.twig', array('id' => $id));
