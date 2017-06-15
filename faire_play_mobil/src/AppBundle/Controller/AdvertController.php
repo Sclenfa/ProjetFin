@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 class AdvertController{
 
     public function homeAction(){
-        return $this->render('OCPlatformBundle:Advert:index.html.twig');
+        return $this->render('AppBundle:Advert:index.html.twig');
     }
 
     public function nosProjetsAction(){
