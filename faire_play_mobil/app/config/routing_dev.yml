@@ -12,13 +12,3 @@ _errors:
 
 _main:
     resource: routing.yml
-
-faire_play_accueil:
-    path: /index
-    defaults:
-        _controller: AppBundle:Advert:index
-
-faire_play_nosProjets:
-   path: /nos-projets
-   defaults:
-      _controller: AppBundle:Advert:nosprojets
