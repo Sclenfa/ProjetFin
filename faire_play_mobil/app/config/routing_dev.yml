@@ -13,3 +13,5 @@ _errors:
 _main:
     resource: routing.yml
 
+faire_play_home:
+    path: 
