@@ -12,3 +12,13 @@ _errors:
 
 _main:
     resource: routing.yml
+
+faire_play_accueil:
+    path: /home
+    defaults:
+        _controller: AppBundle:Advert:home
+
+faire_play_nosProjets:
+   path: /nos-projets
+   defaults:
+      _controller: AppBundle:Advert:nosprojets
