@@ -1,0 +1,42 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+<h2>Titre du projet</h2>
+
+<img src="#" alt="Projet 1">
+
+<iframe src="" frameborder="0">Localisation du projet</iframe>
+
+<h3>Description</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ut, fugiat reiciendis dolorum ipsam. Ea odio dolorum, nostrum vel commodi saepe dolore facilis. Cumque odit esse, aperiam beatae, impedit eos!</p>
+
+<h3>Détails</h3>
+<ul>
+    <li>Date de début de projet : </li>
+    <li>Date de fin de projet : </li>
+    <li>Nombre de participants: </li>
+</ul>
+<button>Je veux participer au projet !</button>
+
+
+<section>
+    <!-- Demander la connexion pour afficher le formulaire -->
+
+    <form action="" method="post">
+        <input type="hidden" name="id_projet" value="#" >
+        <input type="hidden" name="id_membre" value="#" >
+
+        <label for="choix_projet">Pourquoi je choisis ce projet</label>
+        <textarea id="choix_projet" name="choix_projet"></textarea><br>
+
+        <label for="competences">Ce que j'amène au projet</label>
+        <textarea id="competences" name="competences"></textarea>
+
+        <input type="submit" name="participer" value="participer">
+
+</section>
+
+<section>
+    <h3>D'autres projets qui pourraient vous intéresser</h3>
+    <a href="#"><img src="#" alt="">En savoir plus</a>
+</section>
+{% endblock %}
