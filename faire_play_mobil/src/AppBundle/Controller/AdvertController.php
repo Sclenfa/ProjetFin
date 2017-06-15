@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Response;
 class AdvertController extends Controller {
 
     /**
-     * @Route("/index")
+     * @Route("/index", name="index")
      */
     public function indexAction(){
         return $this->render('index.html.twig');
@@ -55,5 +55,12 @@ class AdvertController extends Controller {
      */
     public function projetsAction($id){
         return $this->render('fiche_projet.html.twig', array('id' => $id));
+    }
+
+    /**
+     * @Route("/profil", name="profil")
+     */
+    public function profilAction(){
+        return $this->render('profil.html.twig');
     }
 }
