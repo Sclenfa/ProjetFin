@@ -14,10 +14,19 @@
     <header>
         <nav>
             <ul>
-                <li>Connexion</li>
-                <li>Déconnexion</li>
-                <li><a href="profil.html">Mon profil</a></li>
+                <li><a href="/profile/">Mon profil</a></li>
+                <li>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                        <a href="{{ path('fos_user_security_logout') }}">
+                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    {% else %}
+                        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                    {% endif %}
+                </li>
             </ul>
+
         </nav>
         <nav>
             <a href="index.html">Faire Play Mobile</a>
