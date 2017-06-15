@@ -1,0 +1,23 @@
+/*
+Style Reset
+*/
+*{
+    /* Supprimer toutes les marges */
+    margin:0;
+    padding: 0;
+
+    /* Intégrer le padding et le border dans la taille des boîtes */
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Configurer l'utilisation de 1rem=10px */
+html{
+    font-size: 62.5%;
+}
+
+/*  */
+body{
+    text-align: center;
+    font-size: 1.5rem;
+}
