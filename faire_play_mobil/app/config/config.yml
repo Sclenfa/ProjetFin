@@ -68,8 +68,11 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
+# app/config/config.yml
 fos_user:
-    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    db_driver: orm
     firewall_name: main
     user_class: AppBundle\Entity\User
-
+    from_email:
+        address: "contact@faire_play_mobil.fr"
+        sender_name: "faire_play_mobil"
