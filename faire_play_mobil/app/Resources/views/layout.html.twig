@@ -16,7 +16,7 @@
         <a><img src="img/logo.png"></a>
         <nav id="login" class="fa fa-user">
             <ul>
-                <li><a href="/profile/">Mon profil</a></li>
+                <li><a href="{{ path('profil') }}">Mon profil</a></li>
                 <li>
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
@@ -30,13 +30,14 @@
             </ul>
 
         </nav>
-        <nav id="nav">
+        <nav>
+            <a href="{{ path('index') }}">Faire Play Mobile</a>
+            <i> Menu</i>
             <ul>
-                <li><a href="index.html">Faire Play Mobil</a></li>
-                <li><a href="#">Nos projets</a></li>
-                <li><a href="#">Proposer un projet</a></li>
-                <li><a href="#">Nous soutenir</a></li>
-                <li><a href="#">Contactez-nous</a></li>
+                <li><a href="{{ path('nos-projets') }}">Nos projets</a></li>
+                <li><a href="{{ path('proposer-un-projet') }}">Proposer un projet</a></li>
+                <li><a href="{{ path('nous-soutenir') }}">Nous soutenir</a></li>
+                <li><a href="{{ path('nous-contacter') }}">Contactez-nous</a></li>
             </ul>
         </nav>
     </header>
@@ -48,7 +49,8 @@
     <footer>
             <h2>N'hésitez pas à nous contacter !</h2>
             <article>
-                <a href="nous_contacter.html">Nous contacter</a>
+                <i>Icone Fontawesome</i>
+                <a href="{{ path('nous-contacter') }}">Nous contacter</a>
 
                 <a href="#" class="fa fa-facebook" aria-hidden="true"></a>
             </article>

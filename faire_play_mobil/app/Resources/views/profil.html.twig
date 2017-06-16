@@ -1,13 +1,7 @@
 {% extends "layout.html.twig" %}
 
+
 {% block content %}
-{% trans_default_domain 'FOSUserBundle' %}
-
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-</div>
-
     <h2>Mon profil</h2>
 
     <h3>Bonjour '#'</h3>
@@ -16,4 +10,8 @@
         <p>Votre email : '  '</p>
         <p>Vos projets en cours : ' '</p>
     </section>
+
+    {% include "@FOSUser/Profile/show_content.html.twig" %}
+
 {% endblock %}
+
