@@ -1,5 +1,6 @@
 {% extends "layout.html.twig" %}
 
+
 {% block content %}
     <h2>Mon profil</h2>
 
@@ -9,4 +10,8 @@
         <p>Votre email : '  '</p>
         <p>Vos projets en cours : ' '</p>
     </section>
+
+    {% include "@FOSUser/Profile/show_content.html.twig" %}
+
 {% endblock %}
+
