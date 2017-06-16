@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title '' %} - Faire Play Mobile</title>
+    <title> Faire Play Mobile</title>
 
     <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
+
 
 </head>
 <body>
     <header>
-        <nav>
+        <a><img src="img/logo.png"></a>
+        <nav id="login" class="fa fa-user">
             <ul>
                 <li><a href="/profile/">Mon profil</a></li>
                 <li>
@@ -28,10 +30,9 @@
             </ul>
 
         </nav>
-        <nav>
-            <a href="index.html">Faire Play Mobile</a>
-            <i> Menu</i>
+        <nav id="nav">
             <ul>
+                <li><a href="index.html">Faire Play Mobil</a></li>
                 <li><a href="#">Nos projets</a></li>
                 <li><a href="#">Proposer un projet</a></li>
                 <li><a href="#">Nous soutenir</a></li>
@@ -47,15 +48,13 @@
     <footer>
             <h2>N'hésitez pas à nous contacter !</h2>
             <article>
-                <i>Icone Fontawesome</i>
                 <a href="nous_contacter.html">Nous contacter</a>
 
-                <i>Icone Fontawesome Facebook</i>
-                <a href="#">Page Facebook</a>
+                <a href="#" class="fa fa-facebook" aria-hidden="true"></a>
             </article>
 
             <article>
-                <p>Mentions légales</p>
+                <a>Mentions légales</a>
             </article>
     </footer>
 </body>
