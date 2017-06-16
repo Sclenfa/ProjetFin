@@ -63,4 +63,19 @@ class AdvertController extends Controller {
     public function profilAction(){
         return $this->render('profil.html.twig');
     }
+
+    /**
+     * @Route ("/administration", name="administration")
+     */
+    public function backOffAction(){
+        return $this -> render(':Admin:administration.html.twig');
+    }
+
+    public function membreAction(){
+        return $this -> render(':Admin:gestion_membre.html.twig');
+    }
+
+    public function projetsAction(){
+        return $this-> render(':Admin:gestion_projets.html.twig')
+    }
 }

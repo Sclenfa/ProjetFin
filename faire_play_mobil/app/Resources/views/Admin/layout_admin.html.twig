@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title '' %} - Faire Play Mobile</title>
+
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="{{ path('profil') }}">Mon profil</a></li>
+            <li><a href="{{ path('') }}">Mon profil</a></li>
+            <li>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                    <a href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                {% else %}
+                    <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                {% endif %}
+            </li>
+        </ul>
+
+    </nav>
+
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <h2>N'hésitez pas à nous contacter !</h2>
+    <article>
+        <i>Icone Fontawesome</i>
+        <a href="{{ path('nous-contacter') }}">Nous contacter</a>
+
+        <i>Icone Fontawesome Facebook</i>
+        <a href="#">Page Facebook</a>
+    </article>
+
+    <article>
+        <p>Mentions légales</p>
+    </article>
+</footer>
+</body>
+</html>
