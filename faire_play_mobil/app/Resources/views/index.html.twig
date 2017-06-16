@@ -1,39 +1,51 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-    <h1>Faire Play Mobile</h1>
+    <section>
+        <h1>Faire Play Mobile</h1>
 
-    <h2>Objet inutile d'une importance capitale ! </h2>
+        <img src="img/personnage.png" alt="petit bonhomme engrenage">
 
-    <h3>Qui sommes-nous ? </h3>
-
-    <p>
-        Faire Play Mobile, c'est un collectif pluri-disciplinaire réunissant artistes et artisans (peintres, plasticiens, professeurs, sculpteurs, musiciens,
-        chorégraphes...), leur permettant de mutualiser leurs compétences pour la réalisation de projets artistiques, mais aussi associatifs, culturels et solidaires.
-
-        Objet ludique et utile, Faire Play Mobile favorise les rencontres, la réinsertion, le partage, la transmission et l'échange des savoirs entre générations, entre couches sociales.
-
-        Les temps sont durs... Mais Faire Play Mobile permet à des passionnés de se réaliser en dehors de leur métier, à des gens qui ne se seraient jamais croisés de se rencontrer.
-
-        - Un réseau itinérant fédérateur de talents
-
-        - respectant l'environnement du quartier et de ses habitants
-
-        - recréant du lien social et introduisant de la créativité au quotidien, toujours de façon ludique
-
-    </p>
+        <h3>" Objet inutile d'une importance capitale ! " </h3>
 
 
-    <h2>
-        Artistes, artisans, scientifiques, âmes poétiques de tous les pays : unissez-vous !
-    </h2>
+    </section>
 
+    <section>
+        <h2>Qui sommes-nous ? </h2>
 
         <p>
-            "Lorem ipsum dolor"<span>Sylvain Girvès, président de l'association <a href="#" >Qui est Sylvain ?></a></span>
+            Faire Play Mobile, c'est un collectif pluri-disciplinaire réunissant artistes et artisans (peintres, plasticiens, professeurs, sculpteurs, musiciens,
+            chorégraphes...), leur permettant de mutualiser leurs compétences pour la réalisation de projets artistiques, mais aussi associatifs, culturels et solidaires.
+
+            <span>
+                Objet ludique et utile, Faire Play Mobile favorise les rencontres, la réinsertion, le partage, la transmission et l'échange des savoirs entre générations, entre couches sociales.
+            </span>
+            <span>
+                Les temps sont durs... Mais Faire Play Mobile permet à des passionnés de se réaliser en dehors de leur métier, à des gens qui ne se seraient jamais croisés de se rencontrer.
+            </span>
+
+            <span>- Un réseau itinérant fédérateur de talents</span>
+
+            <span>- respectant l'environnement du quartier et de ses habitants</span>
+
+            <span>- recréant du lien social et introduisant de la créativité au quotidien, toujours de façon ludique</span>
+
         </p>
 
-        <section>
+
+        <h2>
+            Artistes, artisans, scientifiques, âmes poétiques de tous les pays : unissez-vous !
+        </h2>
+
+
+        <p>Sylvain Girvès, président de l'association</p>
+
+        <button onclick="modalBioSylvain">Qui est Sylvain ?</button>
+    </section>
+
+    <section>
+        <article>
             <h2>Comment ça marche ? </h2>
 
             <p> Faire Play Mobile est la plategorme qui poursuit sur le Web l'aventure collective et poétique du réel.
@@ -41,31 +53,34 @@
 
             </p>
 
-            <p>Vous souhaitez proposer un projet ? <a href="#">Ecrivez-nous directement></a></p>
+            <p>Vous souhaitez proposer ou participer à un projet ?</p>
+        </article>
+        <button onclick="proposer_un_projet.html.twig">Proposer</button>
+        <button onclick="nos_projets.html.twig">Participer</button>
 
-        </section>
+    </section>
 
 
-        <section>
-            <h2>Nos projets</h2>
-            <p>Naviguez parmi nos projets ludiques !</p>
-            <a href="nos_projets.html">En savoir plus</a>
+    <section>
+        <h2>Quelques projets</h2>
+        <p>Naviguez parmi nos projets ludiques !</p>
+        <a href="nos_projets.html.twig">En savoir plus</a>
 
-            <figure>
-                <img src="#" alt="Projet 1 : le Segway">
-                <figcaption><a href="">Projet<b>Le Segway, cinéma ambulant</b></a></figcaption>
-            </figure>
+        <figure>
+            <img src="#" alt="Projet 1 : le Segway">
+            <figcaption><a href="">Projet<b>Le Segway, cinéma ambulant</b></a></figcaption>
+        </figure>
 
-            <figure>
-                <img src="#" alt="Projet 2 : la Caravane">
-                <figcaption><a href="">Projet<b>La Caravane - La Boîte à Créer</b></a></figcaption>
-            </figure>
+        <figure>
+            <img src="#" alt="Projet 2 : la Caravane">
+            <figcaption><a href="">Projet<b>La Caravane - La Boîte à Créer</b></a></figcaption>
+        </figure>
 
-            <figure>
-                <img src="#" alt="Projet 3 : le bicyclettoscope">
-                <figcaption><a href="">Projet<b>Le bicyclettoscope</b></a></figcaption>
-            </figure>
+        <figure>
+            <img src="#" alt="Projet 3 : le bicyclettoscope">
+            <figcaption><a href="">Projet<b>Le bicyclettoscope</b></a></figcaption>
+        </figure>
 
-        </section>
+    </section>
 
 {% endblock %}
