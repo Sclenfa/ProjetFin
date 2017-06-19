@@ -4,6 +4,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -15,66 +16,99 @@ class Project
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     *
      */
     protected $id;
 
     /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="User", mappedBy="projects")
-     */
-    protected $users;
-
-    /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank()
+     * @Assert\Length(max=255)
      */
     protected $name;
 
     /**
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank()
+     * @Assert\Length(max=2500)
      */
     protected $description;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Length(max=255)
      */
     protected $address;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank()
+     * @Assert\Length(max=5)
+     * @Assert\Type("integer")
      */
     protected $cp;
 
     /**
      * @var \DateTime
      * @ORM\Column(type="datetime")
+     *
+     * @Assert\NotBlank()
+     * @Assert\Type("\DateTime")
      */
     protected $dateBegin;
 
     /**
      * @var \DateTime
      * @ORM\Column(type="datetime")
+     *
+     * @Assert\Type("\DateTime")
      */
     protected $dateEnd;
 
     /**
      * @ORM\Column(type="text", columnDefinition="ENUM('arts_plastiques', 'photographie', 'performance', 'ateliers')")
+     *
+     * @Assert\NotBlank()
+     * @Assert\Choice(choices = {"arts_plastiques", "photographie", "photographie", "performance", "ateliers" })
+     *
      */
     protected $category;
 
     /**
      * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank()
+     * @Assert\Length(max=255)
      */
     protected $city;
 
     /**
      * @ORM\Column(type="string")
+     *
+     * @Assert\File(
+     *     maxSize = "1024k",
+     *     mimeTypes = {"image/jpeg", "image/png"},
+     * )
+     *
+     * @Assert\NotBlank()
      */
     protected $photo;
 
     /**
      * @ORM\Column(type="integer")
+     *
      */
     protected $participant;
+
+    /**
+     * @ORM\Column(type="text", columnDefinition="ENUM('en_cours', 'terminer')")
+     *
+     * @Assert\Choice({"en_cours", "terminer" })
+     *
+     */
+    protected $statut;
 
 
     public function __construct(){
@@ -192,7 +226,7 @@ class Project
     /**
      * @return \DateTime
      */
-    public function getDateBegin(): \DateTime
+    public function getDateBegin()
     {
         return $this->dateBegin;
     }
@@ -201,7 +235,7 @@ class Project
      * @param \DateTime $dateBegin
      * @return Project
      */
-    public function setDateBegin(\DateTime $dateBegin): Project
+    public function setDateBegin(\DateTime $dateBegin = null): Project
     {
         $this->dateBegin = $dateBegin;
         return $this;
@@ -210,7 +244,7 @@ class Project
     /**
      * @return \DateTime
      */
-    public function getDateEnd(): \DateTime
+    public function getDateEnd()
     {
         return $this->dateEnd;
     }
@@ -219,7 +253,7 @@ class Project
      * @param \DateTime $dateEnd
      * @return Project
      */
-    public function setDateEnd(\DateTime $dateEnd): Project
+    public function setDateEnd(\DateTime $dateEnd = null)
     {
         $this->dateEnd = $dateEnd;
         return $this;
@@ -296,4 +330,24 @@ class Project
         $this->participant = $participant;
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getStatut()
+    {
+        return $this->statut;
+    }
+
+    /**
+     * @param mixed $statut
+     * @return Project
+     */
+    public function setStatut($statut)
+    {
+        $this->statut = $statut;
+        return $this;
+    }
+
+
 }

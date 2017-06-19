@@ -15,7 +15,6 @@
     <nav>
         <ul>
             <li><a href="{{ path('profil') }}">Mon profil</a></li>
-            <li><a href="{{ path('') }}">Mon profil</a></li>
             <li>
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |

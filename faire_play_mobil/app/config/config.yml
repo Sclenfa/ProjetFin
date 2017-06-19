@@ -7,6 +7,7 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    img_directory: '%kernel.project_dir%/web/img'
 
 framework:
     #esi: ~
@@ -48,6 +49,8 @@ doctrine:
         user: '%database_user%'
         password: '%database_password%'
         charset: UTF8
+        mapping_types:
+                     enum: string
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
         #     e.g. database_path: "%kernel.project_dir%/var/data/data.sqlite"

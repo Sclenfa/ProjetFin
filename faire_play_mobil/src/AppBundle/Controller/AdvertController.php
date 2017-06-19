@@ -44,12 +44,6 @@ class AdvertController extends Controller {
         return $this->render('nous_contacter.html.twig');
     }
 
-    /**
-     * @Route("/projets/{id}", name="fiche-projets")
-     */
-    public function projetsAction($id){
-        return $this->render('fiche_projet.html.twig', array('id' => $id));
-    }
 
     /**
      * @Route("/profil", name="profil")
@@ -65,11 +59,18 @@ class AdvertController extends Controller {
         return $this -> render(':Admin:administration.html.twig');
     }
 
+    /**
+     * @Route ("/administration/gestion_membre", name="gestion_membre")
+     */
     public function membreAction(){
         return $this -> render(':Admin:gestion_membre.html.twig');
     }
 
+    /**
+     * @Route ("/administration/gestion_projets", name="gestion_projets")
+     */
     public function projetAction(){
         return $this-> render(':Admin:gestion_projets.html.twig');
     }
+
 }
