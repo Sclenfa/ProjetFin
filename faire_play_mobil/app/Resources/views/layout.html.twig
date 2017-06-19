@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title '' %} - Faire Play Mobile</title>
+    <title> Faire Play Mobile</title>
 
     <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
+
 
 </head>
 <body>
     <header>
-        <nav>
+        <a><img src="img/logo.png"></a>
+        <nav id="login" class="fa fa-user">
             <ul>
                 <li><a href="{{ path('profil') }}">Mon profil</a></li>
                 <li>
@@ -50,12 +52,11 @@
                 <i>Icone Fontawesome</i>
                 <a href="{{ path('nous-contacter') }}">Nous contacter</a>
 
-                <i>Icone Fontawesome Facebook</i>
-                <a href="#">Page Facebook</a>
+                <a href="#" class="fa fa-facebook" aria-hidden="true"></a>
             </article>
 
             <article>
-                <p>Mentions légales</p>
+                <a>Mentions légales</a>
             </article>
     </footer>
 </body>
