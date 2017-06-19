@@ -69,7 +69,7 @@ class AdvertController extends Controller {
         return $this -> render(':Admin:gestion_membre.html.twig');
     }
 
-    public function projetsAction(){
-        return $this-> render(':Admin:gestion_projets.html.twig')
+    public function projetAction(){
+        return $this-> render(':Admin:gestion_projets.html.twig');
     }
 }
