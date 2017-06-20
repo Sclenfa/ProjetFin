@@ -12,21 +12,9 @@
 </head>
 <body>
 <header>
-
-    <nav>
-        <a href="{{ path('index') }}">Faire Play Mobile</a>
-        <i> Menu</i>
-        <ul>
-            <li><a href="{{ path('nos-projets') }}">Nos projets</a></li>
-            <li><a href="{{ path('proposer-un-projet') }}">Proposer un projet</a></li>
-            <li><a href="{{ path('nous-soutenir') }}">Nous soutenir</a></li>
-            <li><a href="{{ path('nous-contacter') }}">Contactez-nous</a></li>
-        </ul>
-    </nav>
     <nav>
         <ul>
             <li><a href="{{ path('profil') }}">Mon profil</a></li>
-            <li><a href="/web/register">Inscription</a></li>
             <li>
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
@@ -41,20 +29,10 @@
 
     </nav>
 
-    {% if app.request.hasPreviousSession %}
-        {% for type, messages in app.session.flashbag.all() %}
-            {% for message in messages %}
-                <div class="flash-{{ type }}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endfor %}
-    {% endif %}
 </header>
 
 <main>
     {% block content %}{% endblock %}
-    {% block fos_user_content %}{% endblock fos_user_content %}
 </main>
 
 <footer>
