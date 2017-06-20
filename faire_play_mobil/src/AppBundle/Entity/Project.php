@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -18,6 +19,12 @@ class Project
      *
      */
     protected $id;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="projects")
+     * @var ArrayCollection
+     */
+    protected $users;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -102,9 +109,9 @@ class Project
     protected $participant;
 
     /**
-     * @ORM\Column(type="text", columnDefinition="ENUM('en_cours', 'terminer')")
+     * @ORM\Column(type="text", columnDefinition="ENUM('en_attente', 'en_cours', 'terminer')")
      *
-     * @Assert\Choice({"en_cours", "terminer" })
+     * @Assert\Choice({"en_attente", "en_cours", "terminer" })
      *
      */
     protected $statut;
