@@ -1,0 +1,42 @@
+{% extends ':Admin:layout_admin.html.twig' %}
+
+{% block content %}
+    {{ form_start(form) }}
+
+    {{ form_label(form.name) }}
+    {{ form_widget(form.name) }}
+
+    {{ form_label(form.description) }}
+    {{ form_widget(form.description) }}
+
+    {{ form_label(form.category) }}
+    {{ form_widget(form.category) }}
+
+    {{ form_label(form.address) }}
+    {{ form_widget(form.address) }}
+
+    {{ form_label(form.city) }}
+    {{ form_widget(form.city) }}
+
+    {{ form_label(form.cp) }}
+    {{ form_widget(form.cp) }}
+
+    {{ form_label(form.photo) }}
+    {{ form_widget(form.photo) }}
+
+    {{ form_label(form.date_begin) }}
+    {{ form_widget(form.date_begin) }}
+
+    {{ form_label(form.date_end) }}
+    {{ form_widget(form.date_end) }}
+
+    {{ form_label(form.participant) }}
+    {{ form_widget(form.participant) }}
+
+    {{ form_label(form.statut) }}
+    {{ form_widget(form.statut) }}
+
+    {{ form_widget(form.envoyer) }}
+
+    {{ form_end(form) }}
+{% endblock %}

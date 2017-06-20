@@ -6,6 +6,8 @@ namespace AppBundle\Entity;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
+
+
 /**
  * @ORM\Entity
  * @ORM\Table(name="fos_user")
@@ -19,9 +21,14 @@ class User extends BaseUser
      */
     protected $id;
 
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @ORM\ManyToMany(targetEntity="Project", inversedBy="users")
+     * @ORM\JoinTable(name="users_projects")
+     */
+    protected $projects;
+
+    public function __construct(){
+        $this->projects = new \Doctrine\Common\Collections\ArrayCollection();
     }
 }

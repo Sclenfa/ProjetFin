@@ -1,8 +1,41 @@
 {% extends "layout.html.twig" %}
 {% block content %}
-    <h3>Nous soutenir</h3>
+    <h1>Nous soutenir</h1>
 
-    <p>Lorem</p>
-    {# API paiement #}
+    <h2>Nous sommes une jeune association et nous avons besoin de vos forces vives pour exister, créer et rêver ensemble !</h2>
+
+        <article>
+            <h4>Dons financiers </h4>
+            <p>Vous pouvez nous faire un don via Paypal, soit avec votre compte sur la plateforme soit par carte bancaire.
+                Le système est 100% sécurisé.</p>
+
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+                <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
+                <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </article>
+
+
+        <article>
+            <h4>Ressourcerie matérielle</h4>
+            <p>Nous avons toujours besoin de matériel de récupération pour nos créations ! Si vous avez des objets inutiles...
+                ils sont pour nous d'une importance capitale !
+                Pour nous proposer du matériel, n'hésitez pas à nous envoyer un mail à <a href="faireplaymobil@gmail.com">faireplaymobil@gmail.com</a>
+            </p>
+        </article>
+
+
+        <article>
+            <h4>Ressourcerie humaine</h4>
+            <p>Vous avez un talent ? Un savoir-faire ? Vous pouvez peut-être nous aider et travailler avec nous!
+            Vous pouvez consulter <a href="/nos-projets">la liste de nos projets</a> ou nous envoyer directement un mail à <a href="faireplaymobil@gmail.com">faireplaymobil@gmail.com</a>
+            </p>
+        </article>
+
+
+
 
 {% endblock %}
