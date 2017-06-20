@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Etudiant
- * Date: 15/06/2017
- * Time: 14:01
- */
 
 namespace AppBundle\Controller;
 
@@ -50,12 +44,6 @@ class AdvertController extends Controller {
         return $this->render('nous_contacter.html.twig');
     }
 
-    /**
-     * @Route("/projets/{id}", name="fiche-projets")
-     */
-    public function projetsAction($id){
-        return $this->render('fiche_projet.html.twig', array('id' => $id));
-    }
 
     /**
      * @Route("/profil", name="profil")
@@ -63,4 +51,26 @@ class AdvertController extends Controller {
     public function profilAction(){
         return $this->render('profil.html.twig');
     }
+
+    /**
+     * @Route ("/administration", name="administration")
+     */
+    public function backOffAction(){
+        return $this -> render(':Admin:administration.html.twig');
+    }
+
+    /**
+     * @Route ("/administration/gestion_membre", name="gestion_membre")
+     */
+    public function membreAction(){
+        return $this -> render(':Admin:gestion_membre.html.twig');
+    }
+
+    /**
+     * @Route ("/administration/gestion_projets", name="gestion_projets")
+     */
+    public function projetAction(){
+        return $this-> render(':Admin:gestion_projets.html.twig');
+    }
+
 }

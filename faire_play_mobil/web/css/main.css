@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Poiret+One');
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
 /*
 Style Reset
 */
@@ -19,5 +22,156 @@ html{
 /*  */
 body{
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
     font-size: 1.5rem;
 }
+
+h1,h2,h3{
+    font-family: 'Poiret One', cursive;
+    margin-bottom: 1.5rem;
+}
+
+
+
+p{
+    margin: 3rem 2rem;
+}
+
+a, footer{
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: black;
+    font-size:1.2rem;
+}
+
+img{
+    max-width: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+section{
+    padding: 4rem 0 ;
+}
+
+button{
+    -webkit-border-radius: 4rem;
+    border-radius: 1.2rem;
+    padding: .5rem 2rem;
+    font-family: inherit;
+    border-style: none;
+
+}
+/*
+ Header
+ */
+
+/* nav connexion */
+
+#login li{
+    display: none;
+}
+
+/* nav navigation */
+header img {
+    max-width: 50%;
+    float: left;
+    margin: 1rem 0 2rem 0;
+}
+
+#nav {
+    clear: both;
+
+}
+
+#nav li {
+    padding : 0.2rem;
+    border: 0.15rem solid #2eb3be;
+}
+
+#nav li :not(:last-child){
+    margin-bottom: .3rem;
+
+}
+
+
+
+/*
+ Footer
+ */
+footer{
+    background-color: #2eb3be;
+    padding: 1rem;
+}
+
+.fa.fa-facebook{
+    display: block;
+}
+
+
+/*************************************************************************
+ Index.html
+ *************************************************************************/
+
+
+/*Section 1*/
+main section:first-child{
+    background-color: #2eb3be;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h3{
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+main section:first-child img{
+    margin-bottom: 3rem;
+}
+
+
+/*Section 2*/
+
+main section:nth-child(2) span{
+    display: block;
+    padding-bottom: 0.8rem;
+}
+
+main section:nth-child(2) h2{
+    color: #2eb3be;
+}
+
+main section:nth-child(2) button{
+    background-color: #2eb3be;
+    color: white;
+}
+
+/* Section 3 */
+main section:nth-child(3){
+    background-image: url("../img/background_striped.png");
+    background-size: cover;
+}
+
+main section:nth-child(3) article{
+    background-color: #0099a7;
+    color: white;
+    background-size: 2rem;
+    margin: 1.5rem;
+    padding: 2rem 1rem 0.2rem 1rem;
+}
+
+main section:nth-child(3) button{
+    color: #2eb3be;
+    background-color: white;
+    margin: 2rem;
+    font-weight: 700;
+}
+
+
