@@ -70,4 +70,18 @@ class ProjectController extends Controller
 
 
     }
+    public function showAllAction(EntityManagerInterface $em)
+    {
+        $product = $em->getRepository('AppBundle:Project')
+            ->findAll();
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '
+            );
+        }
+
+        return $this->render('.html.twig');
+    }
+
 }

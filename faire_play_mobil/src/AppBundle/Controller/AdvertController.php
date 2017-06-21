@@ -48,24 +48,10 @@ class AdvertController extends Controller {
     }
 
     /**
-     * @Route ("/administration", name="administration")
+     * @Route("/fiche", name="fiche")
      */
-    public function backOffAction(){
-        return $this -> render(':Admin:administration.html.twig');
-    }
-
-    /**
-     * @Route ("/administration/gestion_membre", name="gestion_membre")
-     */
-    public function membreAction(){
-        return $this -> render(':Admin:gestion_membre.html.twig');
-    }
-
-    /**
-     * @Route ("/administration/gestion_projets", name="gestion_projets")
-     */
-    public function projetAction(){
-        return $this-> render(':Admin:gestion_projets.html.twig');
+    public function ficheAction(){
+        return $this->render('fiche_projet.html.twig');
     }
 
 }
