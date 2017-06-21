@@ -36,7 +36,6 @@ class ProjectType extends AbstractType
             ->add('participant')
             ->add('statut', ChoiceType::class, array(
                     'choices'  => array(
-                        'A valider' => 'en_attente',
                         'En Cours' => 'en_cours',
                         'Terminer' => 'terminer',
                     )

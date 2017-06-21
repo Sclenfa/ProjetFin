@@ -2,14 +2,14 @@
 
 namespace AppBundle\Controller;
 
-use Doctrine\ORM\EntityManagerInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+
 use AppBundle\Entity\Project;
 use AppBundle\Form\ProjectType;
+use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 
 class ProjectController extends Controller
@@ -49,18 +49,36 @@ class ProjectController extends Controller
         return $this->render(':Admin:gestion_projets.html.twig', array('form' => $form->createView()));
     }
 
-    public function showAction($projectId, EntityManagerInterface $em)
+
+
+
+
+    public function showAction($productId, EntityManagerInterface $em)
     {
-        $product = $em->getRepository('AppBundle:Entity:Project')
-            ->find($projectId);
+        $product = $em->getRepository('AppBundle:Product')
+            ->find($productId);
 
         if (!$product) {
             throw $this->createNotFoundException(
-                'Aucun projet trouver'.$projectId
+                'No product found for id '.$productId
             );
-        }else{
-            return $this->render('fiche_projet.html.twig');
         }
+
+
+
+    }
+    public function showAllAction(EntityManagerInterface $em)
+    {
+        $product = $em->getRepository('AppBundle:Project')
+            ->findAll();
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '
+            );
+        }
+
+        return $this->render('.html.twig');
     }
 
 }

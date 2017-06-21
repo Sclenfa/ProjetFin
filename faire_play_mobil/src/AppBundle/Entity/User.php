@@ -1,4 +1,5 @@
 <?php
+// src/AppBundle/Entity/User.php
 
 namespace AppBundle\Entity;
 
@@ -28,8 +29,6 @@ class User extends BaseUser
     protected $projects;
 
     public function __construct(){
-        parent::__construct();
-
         $this->projects = new \Doctrine\Common\Collections\ArrayCollection();
     }
 }
