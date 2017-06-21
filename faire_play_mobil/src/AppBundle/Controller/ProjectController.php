@@ -50,20 +50,23 @@ class ProjectController extends Controller
     }
 
 
+    /**
+     * @param $projectsId
+     * @param EntityManagerInterface $em
+     * @Route("/nos-projets", name="nos-projets")
+     */
+    public function allProjectAction(EntityManagerInterface $em){
+        $project = $em->getRepository('AppBundle:Project')
+            ->findAll();
 
-
-
-    public function showAction($productId, EntityManagerInterface $em)
-    {
-        $product = $em->getRepository('AppBundle:Product')
-            ->find($productId);
-
-        if (!$product) {
+        if (!$project) {
             throw $this->createNotFoundException(
-                'No product found for id '.$productId
+                'No product found for id '
             );
-        }
 
+        }else{
+            return $this->render('nos_projets.html.twig', ['projects' => $project]);
+        }
 
 
     }

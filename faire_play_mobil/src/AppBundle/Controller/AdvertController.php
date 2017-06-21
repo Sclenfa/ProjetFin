@@ -16,12 +16,7 @@ class AdvertController extends Controller {
         return $this->render('index.html.twig');
     }
 
-    /**
-     * @Route("/nos-projets", name="nos-projets")
-     */
-    public function nosProjetsAction(){
-        return $this->render('nos_projets.html.twig');
-    }
+
 
     /**
      * @Route("/proposer", name="proposer-un-projet")

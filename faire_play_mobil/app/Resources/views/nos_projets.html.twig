@@ -29,19 +29,11 @@
     </section>
     <br>
 
-    <figure>
-        <img src="#" alt="Projet 1">
-        <figcaption>Projet 1 <button>Afficher les détails</button></figcaption>
-    </figure>
-
-    <figure>
-        <img src="#" alt="Projet 2">
-        <figcaption>Projet 2 <button>Afficher les détails</button></figcaption>
-    </figure>
-
-    <figure>
-        <img src="#" alt="Projet 3">
-        <figcaption>Projet 3 <button>Afficher les détails</button></figcaption>
-    </figure>
+    {% for project in projects %}
+        <figure>
+            <img src="{{ asset('img/' ~ project.photo) }} " alt="Projet 1">
+            <figcaption>{{ project.name }}<button><a href="{{ path('fiche', {projectId: project.id}) }}">Afficher les détails</a></button></figcaption>
+        </figure>
+    {% endfor %}
 
 {% endblock %}
