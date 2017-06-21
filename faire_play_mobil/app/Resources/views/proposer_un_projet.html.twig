@@ -1,44 +1,47 @@
 {% extends "layout.html.twig" %}
+
+
 {% block content %}
-<h3>Formulaire d'ajout de projets</h3>
+        <h3>Formulaire d'ajout de projets</h3>
 
-    <p>
-        Chez Faire Play Mobile, la philosophie est simple : nos projets s'articulent autour de l'humain, du respect de l'environnement, et de l'innovation. Recyclons les vieilles choses pour en faire « des objets inutiles mais d'une importance capitale ! »
-        Si vous avez un projet qui s'accorde avec ces principes, proposez-le nous !
-    </p>
+        <p>
+            Chez Faire Play Mobile, la philosophie est simple : nos projets s'articulent autour de l'humain, du respect de l'environnement, et de l'innovation. Recyclons les vieilles choses pour en faire « des objets inutiles mais d'une importance capitale ! »
+            Si vous avez un projet qui s'accorde avec ces principes, proposez-le nous !
+        </p>
 
-<form method="post" enctype="multipart/form-data" action="">
+    {{ form_start(form) }}
 
-    <label for="nom_projet">Nom de votre projet</label>
-    <input type="text" id="nom_projet" name="nom_projet" value="#">
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
 
-    <label for="categorie">Catégories</label>
-    <select name="categorie">
-        <option value="arts_plastiques">Arts-Plastiques</option>
-        <option value="photographie">Photographie</option>
-        <option value="performance">Performance</option>
-        <option value="ateliers">Atelier</option>
-    </select>
+        {{ form_label(form.description) }}
+        {{ form_widget(form.description) }}
 
-    <label for="description">Description</label>
-    <textarea id="description" name="description"></textarea>
+        {{ form_label(form.category) }}
+        {{ form_widget(form.category) }}
 
-    <label for="adresse">Adresse</label>
-    <textarea id="adresse" name="adresse"></textarea>
+        {{ form_label(form.address) }}
+        {{ form_widget(form.address) }}
 
-    <label for="code_postal">Code Postal</label>
-    <input type="text" id="code_postal" name="code_postal" value="#">
+        {{ form_label(form.city) }}
+        {{ form_widget(form.city) }}
 
-    <label for="ville">Ville</label>
-    <input type="text" id="ville" name="ville" value="#">
+        {{ form_label(form.cp) }}
+        {{ form_widget(form.cp) }}
 
-    <label for="photo">Photo</label>
-    <input type="file" id="photo" name="photo"><br><br>
+        {{ form_label(form.photo) }}
+        {{ form_widget(form.photo) }}
 
-    <label for="nb_participants">Nombre de participants</label><br>
-    <input type="text" id="nb_participants" name="nb_participants" value=""><br><br>
+        {{ form_label(form.date_begin) }}
+        {{ form_widget(form.date_begin) }}
 
-    <input type="submit" value="Valider" class="btn">
+        {{ form_label(form.date_end) }}
+        {{ form_widget(form.date_end) }}
 
-</form>
-{% endblock %}
+        {{ form_label(form.participant) }}
+        {{ form_widget(form.participant) }}
+
+        {{ form_widget(form.envoyer) }}
+
+        {{ form_end(form) }}
+    {% endblock %}
