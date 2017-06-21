@@ -30,27 +30,12 @@ body{
 h1,h2,h3{
     font-family: 'Poiret One', cursive;
     margin-bottom: 1.5rem;
-    padding: 0 0 0 2rem;
 }
 
-h2{
-    font-size: 3rem;
-}
 
-footer h2{
-    font-size: 2.5rem;
-}
-
-section:first-child, section:nth-child(2), section:nth-child(4){
-    width: 90%;
-    margin: auto;
-}
 
 p{
     margin: 3rem 2rem;
-    font-style: normal;
-    font-weight: 400;
-    font-family: 'Open Sans', sans-serif;
 }
 
 a, footer{
@@ -70,7 +55,7 @@ ul{
 }
 
 section{
-    padding: 2rem 0 ;
+    padding: 4rem 0 ;
 }
 
 button{
@@ -104,10 +89,8 @@ header img {
 }
 
 #nav li {
-    padding : 0.7rem;
-    border: 0.15rem solid #db7c26;
-    border-radius: .4em;
-    background-color: #f7b538;
+    padding : 0.2rem;
+    border: 0.15rem solid #2eb3be;
 }
 
 #nav li :not(:last-child){
@@ -115,29 +98,19 @@ header img {
 
 }
 
+
+
 /*
  Footer
  */
 footer{
-    background-color: #db7c26;
+    background-color: #2eb3be;
     padding: 1rem;
 }
 
-footer a{
-    display: inline-block;
-
+.fa.fa-facebook{
+    display: block;
 }
-
- footer p {
-     display: inline-block;
-     max-width: 32%;
-     vertical-align: middle;
-     margin: auto;
- }
-
- footer img{
-     width: 50%;
- }
 
 
 /*************************************************************************
@@ -146,6 +119,9 @@ footer a{
 
 
 /*Section 1*/
+main section:first-child{
+    background-color: #2eb3be;
+}
 
 h1{
     font-size: 3rem;
@@ -169,12 +145,11 @@ main section:nth-child(2) span{
 }
 
 main section:nth-child(2) h2{
-    color: #db7c26;
-    text-align: left;
+    color: #2eb3be;
 }
 
 main section:nth-child(2) button{
-    background-color: #db7c26;
+    background-color: #2eb3be;
     color: white;
 }
 
@@ -185,7 +160,7 @@ main section:nth-child(3){
 }
 
 main section:nth-child(3) article{
-    background-color: #db7c26;
+    background-color: #0099a7;
     color: white;
     background-size: 2rem;
     margin: 1.5rem;
@@ -193,16 +168,10 @@ main section:nth-child(3) article{
 }
 
 main section:nth-child(3) button{
-    color: #db7c26;
+    color: #2eb3be;
     background-color: white;
     margin: 2rem;
     font-weight: 700;
-}
-
-/* Section 4 */
-main section:nth-child(4) h2{
-    color: #db7c26;
-    text-align: left;
 }
 
 

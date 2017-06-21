@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 class ProjectController extends Controller
 {
     /**
-     * @Route ("/administration/gestion_projets", name="gestion_projets")
+     * @Route ("/admin/gestion_projets", name="gestion_projets")
      */
     public function newAction(Request $request)
     {
