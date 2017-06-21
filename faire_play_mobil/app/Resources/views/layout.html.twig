@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <a><img src="img/logo.png"/></a>
+        <a><img src="{{ asset('img/logo.png') }}"/></a>
         <nav id="login" class="fa fa-user">
             <ul>
                 <li><a href="{{ path('profil') }}">Mon profil</a></li>
@@ -61,9 +61,9 @@
             <h2>N'hésitez pas à nous contacter !</h2>
             <article>
                 <i>Icone Fontawesome</i>
-                <a href="{{ path('nous-contacter') }}">Nous contacter</a>
-                <img src="img/logo_footer.png"/>
-                <a href="#" class="fa fa-facebook" aria-hidden="true"></a>
+                <p><a href="{{ path('nous-contacter') }}">Nous contacter</a></p>
+                <p><img src="{{ asset('img/logo_footer.png') }}"/></p>
+                <p><a href="#" class="fa fa-facebook" aria-hidden="true"></a></p>
             </article>
 
             <article>
