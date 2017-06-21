@@ -242,7 +242,7 @@ class Project
      * @param \DateTime $dateBegin
      * @return Project
      */
-    public function setDateBegin(\DateTime $dateBegin = null): Project
+    public function setDateBegin(\DateTime $dateBegin = null)
     {
         $this->dateBegin = $dateBegin;
         return $this;
