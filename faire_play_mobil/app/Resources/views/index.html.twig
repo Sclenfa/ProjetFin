@@ -1,21 +1,17 @@
-{% extends "@FOSUser/layout.html.twig" %}
+{% extends "layout.html.twig" %}
 
 {% block content %}
     <section>
-        <h1>Faire Play Mobile</h1>
-
-        <img src="img/personnage.png" alt="petit bonhomme engrenage">
-
-        <h3>" Objet inutile d'une importance capitale ! " </h3>
-
-
+        <h1>Faire Play Mobil</h1>
+        <h2>"Inventer, s’unir, réaliser".</h2>
+        <h3>Et si on inventait une structure citoyenne, libre et gratuite pour fédérer nos talents, ré-inventer notre travail et accéder à nos rêves ?</h3>
     </section>
 
     <section>
         <h2>Qui sommes-nous ? </h2>
 
         <p>
-            Faire Play Mobile, c'est un collectif pluri-disciplinaire réunissant artistes et artisans (peintres, plasticiens, professeurs, sculpteurs, musiciens,
+            Faire Play Mobil, c'est un collectif pluri-disciplinaire réunissant artistes et artisans (peintres, plasticiens, professeurs, sculpteurs, musiciens,
             chorégraphes...), leur permettant de mutualiser leurs compétences pour la réalisation de projets artistiques, mais aussi associatifs, culturels et solidaires.
 
             <span>
@@ -67,7 +63,7 @@
         <a href="nos_projets.html.twig">En savoir plus</a>
 
         <figure>
-            <img src="#" alt="Projet 1 : le Segway">
+            <img src="{{ projects.photo }}" alt="Projet 1 : le Segway">
             <figcaption><a href="">Projet<b>Le Segway, cinéma ambulant</b></a></figcaption>
         </figure>
 
@@ -84,3 +80,4 @@
     </section>
 
 {% endblock %}
+
