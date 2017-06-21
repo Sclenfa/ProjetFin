@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -46,6 +47,20 @@ class ProjectController extends Controller
 
 
         return $this->render(':Admin:gestion_projets.html.twig', array('form' => $form->createView()));
+    }
+
+    public function showAction($projectId, EntityManagerInterface $em)
+    {
+        $product = $em->getRepository('AppBundle:Entity:Project')
+            ->find($projectId);
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'Aucun projet trouver'.$projectId
+            );
+        }else{
+            return $this->render('fiche_projet.html.twig');
+        }
     }
 
 }

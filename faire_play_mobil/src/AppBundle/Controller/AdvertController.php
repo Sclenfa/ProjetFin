@@ -45,4 +45,11 @@ class AdvertController extends Controller {
         return $this->render('profil.html.twig');
     }
 
+    /**
+     * @Route("/fiche", name="fiche")
+     */
+    public function ficheAction(){
+        return $this->render('fiche_projet.html.twig');
+    }
+
 }
