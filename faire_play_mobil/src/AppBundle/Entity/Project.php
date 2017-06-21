@@ -1,8 +1,8 @@
 <?php
+// src/AppBundle/Entity/User.php
 
 namespace AppBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -21,12 +21,16 @@ class Project
     protected $id;
 
     /**
+<<<<<<< HEAD
+=======
      * @ORM\ManyToMany(targetEntity="User", mappedBy="projects")
      * @var ArrayCollection
      */
+
     protected $users;
 
     /**
+>>>>>>> Dev
      * @ORM\Column(type="string", length=255)
      *
      * @Assert\NotBlank()
@@ -109,12 +113,18 @@ class Project
     protected $participant;
 
     /**
-     * @ORM\Column(type="text", columnDefinition="ENUM('en_attente', 'en_cours', 'terminer')")
+<<<<<<< HEAD
+     * @ORM\Column(type="text", columnDefinition="ENUM('en_cours', 'terminer')")
      *
-     * @Assert\Choice({"en_attente", "en_cours", "terminer" })
+     * @Assert\Choice({"en_cours", "terminer" })
+=======
+     * @ORM\Column(type="text", columnDefinition="ENUM('en_cours', 'terminer', 'en_attente')")
+     *
+     * @Assert\Choice({"en_cours", "terminer", "en_attente" })
+>>>>>>> Dev
      *
      */
-    protected $statut;
+    protected $statut = "en_attente";
 
 
     public function __construct(){
@@ -241,7 +251,7 @@ class Project
      * @param \DateTime $dateBegin
      * @return Project
      */
-    public function setDateBegin(\DateTime $dateBegin = null): Project
+    public function setDateBegin(\DateTime $dateBegin = null)
     {
         $this->dateBegin = $dateBegin;
         return $this;

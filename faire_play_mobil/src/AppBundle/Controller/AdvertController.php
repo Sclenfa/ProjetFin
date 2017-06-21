@@ -24,6 +24,13 @@ class AdvertController extends Controller {
     }
 
     /**
+     * @Route("/proposer", name="proposer-un-projet")
+     */
+    public function proposerAction(){
+        return $this->render('proposer_un_projet.html.twig');
+    }
+
+    /**
      * @Route("/soutenir", name="nous-soutenir")
      */
     public function soutenirAction(){
@@ -43,6 +50,27 @@ class AdvertController extends Controller {
      */
     public function profilAction(){
         return $this->render('profil.html.twig');
+    }
+
+    /**
+     * @Route ("/administration", name="administration")
+     */
+    public function backOffAction(){
+        return $this -> render(':Admin:administration.html.twig');
+    }
+
+    /**
+     * @Route ("/administration/gestion_membre", name="gestion_membre")
+     */
+    public function membreAction(){
+        return $this -> render(':Admin:gestion_membre.html.twig');
+    }
+
+    /**
+     * @Route ("/administration/gestion_projets", name="gestion_projets")
+     */
+    public function projetAction(){
+        return $this-> render(':Admin:gestion_projets.html.twig');
     }
 
 }

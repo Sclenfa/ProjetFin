@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Faire Play Mobil</title>
+    <title> Faire Play Mobile</title>
 
     <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
 
@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <a><img src="{{ asset('img/logo.png') }}"/></a>
+        <a><img src="img/logo.png"></a>
         <nav id="login" class="fa fa-user">
             <ul>
                 <li><a href="{{ path('profil') }}">Mon profil</a></li>
@@ -26,27 +26,15 @@
                     {% else %}
                         <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
                     {% endif %}
-
-                    {% if app.request.hasPreviousSession %}
-                        {% for type, messages in app.session.flashbag.all() %}
-                            {% for message in messages %}
-                                <div class="flash-{{ type }}">
-                                    {{ message }}
-                                </div>
-                            {% endfor %}
-                        {% endfor %}
-                    {% endif %}
-
                 </li>
             </ul>
 
         </nav>
         <nav id="nav">
+            <a href="{{ path('index') }}">Faire Play Mobile</a>
             <ul>
-                <li><a href="{{ path('index') }}">Faire Play Mobil</a></li>
                 <li><a href="{{ path('nos-projets') }}">Nos projets</a></li>
                 <li><a href="{{ path('proposer-un-projet') }}">Proposer un projet</a></li>
-                <li><a href="">Membres</a></li>
                 <li><a href="{{ path('nous-soutenir') }}">Nous soutenir</a></li>
                 <li><a href="{{ path('nous-contacter') }}">Contactez-nous</a></li>
             </ul>
@@ -60,9 +48,10 @@
     <footer>
             <h2>N'hésitez pas à nous contacter !</h2>
             <article>
-                <p><a href="{{ path('nous-contacter') }}">Nous contacter</a></p>
-                <p><img src="{{ asset('img/logo_footer.png') }}"></p>
-                <p><a href="#" class="fa fa-facebook" aria-hidden="true"></a></p>
+                <i>Icone Fontawesome</i>
+                <a href="{{ path('nous-contacter') }}">Nous contacter</a>
+
+                <a href="#" class="fa fa-facebook" aria-hidden="true"></a>
             </article>
 
             <article>

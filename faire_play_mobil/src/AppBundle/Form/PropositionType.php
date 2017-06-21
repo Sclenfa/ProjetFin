@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Etudiant
+ * Date: 20/06/2017
+ * Time: 15:43
+ */
 
 namespace AppBundle\Form;
 
@@ -11,7 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ProjectType extends AbstractType
+class PropositionType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -34,22 +40,8 @@ class ProjectType extends AbstractType
             ->add('city')
             ->add('photo', FileType::class)
             ->add('participant')
-            ->add('statut', ChoiceType::class, array(
-                    'choices'  => array(
-                        'En Cours' => 'en_cours',
-                        'Terminer' => 'terminer',
-                    )
-                )
-            )
+
             ->add('envoyer', SubmitType::class)
         ;
     }
-
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => Project::class,
-        ));
-    }
-
 }

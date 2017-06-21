@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 class ProjectController extends Controller
 {
     /**
-     * @Route ("/administration/gestion_projets", name="gestion_projets")
+     * @Route ("/admin/gestion_projets", name="gestion_projets")
      */
     public function newAction(Request $request)
     {
