@@ -20,7 +20,7 @@ class UserController extends Controller
 {
 
     /**
-     * @route("/users", name="/users")
+     * @Route("/users", name="users")
      */
     public function showUserAction(EntityManagerInterface $em)
     {
