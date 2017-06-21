@@ -1,4 +1,5 @@
 <?php
+// src/AppBundle/Entity/User.php
 
 namespace AppBundle\Entity;
 
@@ -28,6 +29,7 @@ class Project
     protected $users;
 
     /**
+>>>>>>> Dev
      * @ORM\Column(type="string", length=255)
      *
      * @Assert\NotBlank()
@@ -242,7 +244,7 @@ class Project
      * @param \DateTime $dateBegin
      * @return Project
      */
-    public function setDateBegin(\DateTime $dateBegin = null): Project
+    public function setDateBegin(\DateTime $dateBegin = null)
     {
         $this->dateBegin = $dateBegin;
         return $this;

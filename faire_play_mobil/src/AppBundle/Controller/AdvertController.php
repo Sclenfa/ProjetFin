@@ -16,11 +16,13 @@ class AdvertController extends Controller {
         return $this->render('index.html.twig');
     }
 
+
+
     /**
-     * @Route("/nos-projets", name="nos-projets")
+     * @Route("/proposer", name="proposer-un-projet")
      */
-    public function nosProjetsAction(){
-        return $this->render('nos_projets.html.twig');
+    public function proposerAction(){
+        return $this->render('proposer_un_projet.html.twig');
     }
 
     /**
@@ -43,6 +45,13 @@ class AdvertController extends Controller {
      */
     public function profilAction(){
         return $this->render('profil.html.twig');
+    }
+
+    /**
+     * @Route("/fiche", name="fiche")
+     */
+    public function ficheAction(){
+        return $this->render('fiche_projet.html.twig');
     }
 
 }

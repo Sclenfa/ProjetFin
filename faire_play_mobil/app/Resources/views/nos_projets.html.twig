@@ -1,20 +1,40 @@
 {% extends "layout.html.twig" %}
 
 
-
 {% block content %}
 
-    <h2>Découvrez les projets</h2>
+    {#<link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />#}
+
+
+    <h2>Nos projets</h2>
     <p>Projets, créations et inventions pour aller à la rencontre des autres et fabriquer en s'amusant</p>
 
-    <figure>
-        <img src="#" alt="Projet 1">
-        <figcaption>Projet 1 <button>Afficher les détails</button></figcaption>
 
-        <p>Description</p>
-        <p>Date de début de projet : </p>
-        <p>Date de fin de projet : </p>
-        <p>Nombre de participants : </p>
-    </figure>
+    <section id="checkbox">
+        <p>Catégories :</p>
+        <form action="">
+            <input type="checkbox" name="category" value="arts_plastiques"> Arts plastiques<br>
+            <input type="checkbox" name="category" value="performance"> Performance<br>
+            <input type="checkbox" name="category" value="ateliers"> Ateliers<br>
+            <input type="checkbox" name="category" value="photographie"> Photographie<br>
+            <input type="checkbox" name="select-all" value="select-all"> Toutes les catégories<br>
+        </form>
+
+         <p>Status :</p>
+            <form action="">
+                <input type="checkbox" name="statut" value="en_cours"> En cours<br>
+                <input type="checkbox" name="statut" value="terminé"> Terminé<br>
+                <input type="checkbox" name="select-all" value="select-all"> Tous les projets<br>
+            </form>
+    </section>
+    <br>
+
+    {% for project in projects %}
+        <figure>
+            <img src="{{ asset('img/' ~ project.photo) }} " alt="Projet 1">
+            <figcaption>{{ project.name }}<button><a href="{{ path('fiche', {projectId: project.id}) }}">Afficher les détails</a></button></figcaption>
+        </figure>
+    {% endfor %}
 
 {% endblock %}
+
