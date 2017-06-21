@@ -21,6 +21,16 @@ class Project
     protected $id;
 
     /**
+<<<<<<< HEAD
+=======
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="projects")
+     * @var ArrayCollection
+     */
+
+    protected $users;
+
+    /**
+>>>>>>> Dev
      * @ORM\Column(type="string", length=255)
      *
      * @Assert\NotBlank()
@@ -103,12 +113,18 @@ class Project
     protected $participant;
 
     /**
+<<<<<<< HEAD
      * @ORM\Column(type="text", columnDefinition="ENUM('en_cours', 'terminer')")
      *
      * @Assert\Choice({"en_cours", "terminer" })
+=======
+     * @ORM\Column(type="text", columnDefinition="ENUM('en_cours', 'terminer', 'en_attente')")
+     *
+     * @Assert\Choice({"en_cours", "terminer", "en_attente" })
+>>>>>>> Dev
      *
      */
-    protected $statut;
+    protected $statut = "en_attente";
 
 
     public function __construct(){
@@ -235,7 +251,7 @@ class Project
      * @param \DateTime $dateBegin
      * @return Project
      */
-    public function setDateBegin(\DateTime $dateBegin = null): Project
+    public function setDateBegin(\DateTime $dateBegin = null)
     {
         $this->dateBegin = $dateBegin;
         return $this;
