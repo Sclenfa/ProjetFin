@@ -1,6 +1,9 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
+
+    <link href="{{ asset('css/index.css') }}" rel="stylesheet" type="text/css" />
+
     <section>
         <h1>Faire Play Mobil</h1>
         <h2>"Inventer, s’unir, réaliser".</h2>
@@ -53,7 +56,6 @@
         </article>
         <button onclick="proposer_un_projet.html.twig">Proposer</button>
         <button onclick="nos_projets.html.twig">Participer</button>
-
     </section>
 
 
@@ -76,7 +78,6 @@
             <img src="#" alt="Projet 3 : le bicyclettoscope">
             <figcaption><a href="">Projet<b>Le bicyclettoscope</b></a></figcaption>
         </figure>
-
     </section>
 
 {% endblock %}

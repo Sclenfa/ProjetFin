@@ -88,7 +88,7 @@ button{
 /* nav connexion */
 
 #login li{
-    display: none;
+    /*display: none;*/
 }
 
 /* nav navigation */
@@ -138,71 +138,5 @@ footer a{
  footer img{
      width: 50%;
  }
-
-
-/*************************************************************************
- Index.html
- *************************************************************************/
-
-
-/*Section 1*/
-
-h1{
-    font-size: 3rem;
-}
-
-h3{
-    font-style: italic;
-    font-size: 1.5rem;
-}
-
-main section:first-child img{
-    margin-bottom: 3rem;
-}
-
-
-/*Section 2*/
-
-main section:nth-child(2) span{
-    display: block;
-    padding-bottom: 0.8rem;
-}
-
-main section:nth-child(2) h2{
-    color: #db7c26;
-    text-align: left;
-}
-
-main section:nth-child(2) button{
-    background-color: #db7c26;
-    color: white;
-}
-
-/* Section 3 */
-main section:nth-child(3){
-    background-image: url("../img/background_striped.png");
-    background-size: cover;
-}
-
-main section:nth-child(3) article{
-    background-color: #db7c26;
-    color: white;
-    background-size: 2rem;
-    margin: 1.5rem;
-    padding: 2rem 1rem 0.2rem 1rem;
-}
-
-main section:nth-child(3) button{
-    color: #db7c26;
-    background-color: white;
-    margin: 2rem;
-    font-weight: 700;
-}
-
-/* Section 4 */
-main section:nth-child(4) h2{
-    color: #db7c26;
-    text-align: left;
-}
 
 
