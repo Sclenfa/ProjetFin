@@ -88,20 +88,11 @@ class ProjectController extends Controller
 
 
     }
-    public function showAction($productId, EntityManagerInterface $em)
-    {
-        $product = $em->getRepository('AppBundle:Product')
-            ->find($productId);
 
-        if (!$product) {
-            throw $this->createNotFoundException(
-                'No product found for id '.$productId
-            );
-        }
+    /**
+     *AFFICHE tout les projets
+     */
 
-
-
-    }
     public function showAllAction(EntityManagerInterface $em)
     {
         $product = $em->getRepository('AppBundle:Project')

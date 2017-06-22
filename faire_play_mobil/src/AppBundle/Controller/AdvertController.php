@@ -36,13 +36,4 @@ class AdvertController extends Controller {
     public function contactAction(){
         return $this->render('nous_contacter.html.twig');
     }
-
-
-    /**
-     * @Route("/profil", name="profil")
-     */
-    public function profilAction(){
-        return $this->render('profil.html.twig');
-    }
-
 }
