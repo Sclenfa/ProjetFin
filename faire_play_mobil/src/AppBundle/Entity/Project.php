@@ -99,7 +99,7 @@ class Project
      *     mimeTypes = {"image/jpeg", "image/png"},
      * )
      *
-     * @Assert\NotBlank()
+     *
      */
     protected $photo;
 
@@ -117,6 +117,7 @@ class Project
      */
     protected $statut = "en_attente";
 
+    protected $currentPhoto;
 
     public function __construct(){
         $this->users = new \Doctrine\Common\Collections\ArrayCollection();
@@ -353,6 +354,24 @@ class Project
     public function setStatut($statut)
     {
         $this->statut = $statut;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCurrentPhoto()
+    {
+        return $this->currentPhoto;
+    }
+
+    /**
+     * @param string $currentPhoto
+     * @return Project
+     */
+    public function setCurrentPhoto($currentPhoto)
+    {
+        $this->currentPhoto = $currentPhoto;
         return $this;
     }
 

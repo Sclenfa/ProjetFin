@@ -8,6 +8,7 @@ use AppBundle\Form\ProjectType;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -15,29 +16,44 @@ use Symfony\Component\HttpFoundation\Response;
 class ProjectController extends Controller
 {
     /**
-     * @Route ("/admin/gestion_projets", name="gestion_projets")
+     * @Route ("/admin/gestion_projets/{id}", name="gestion_projets", defaults={"id": null})
      */
-    public function newAction(Request $request)
+    public function editAction(Request $request, $id = null)
     {
-        $project = new Project();
+        $em = $this->getDoctrine()->getManager();
+
+        if (!empty($id)) {
+            $project = $em->getRepository('AppBundle:Project')->find($id);
+            $project->setCurrentPhoto($project->getPhoto());
+            $project->setPhoto(null);
+        } else {
+            $project = new Project();
+        }
 
         $form = $this->createForm(ProjectType::class, $project);
+
 
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
-            $em = $this->getDoctrine()->getManager();
+
             if ($form->isValid()) {
 
                 $photo = $project->getPhoto();
-                $photo->move(
-                    $this->getParameter('img_directory'),
-                    uniqid().$photo->getClientOriginalName()
-                );
 
-                //$project = $form->getData();
-                $project->setPhoto( $photo->getClientOriginalName());
+                if ($photo instanceof UploadedFile){
+                    $photoName = uniqid() . $photo->getClientOriginalName();
+                    $photo->move(
+                        $this->getParameter('img_directory'),
+                        $photoName
+                    );
+
+                    //$project = $form->getData();
+                    $project->setPhoto($photoName);
+                } else{
+                    $project->setPhoto($project->getCurrentPhoto());
+                }
 
                 $em->persist($project);
                 $em->flush();
@@ -58,14 +74,11 @@ class ProjectController extends Controller
 
         if (!$project) {
             throw $this->createNotFoundException(
-                'Aucun projet trouver'.$projectId
+                'Aucun projet trouver' . $projectId
             );
-        }else {
+        } else {
             return $this->render('fiche_projet.html.twig', ['project' => $project]);
         }
-
-
-
     }
 
     /**
@@ -73,7 +86,8 @@ class ProjectController extends Controller
      * @param EntityManagerInterface $em
      * @Route("/nos-projets", name="nos-projets")
      */
-    public function allProjectAction(EntityManagerInterface $em){
+    public function allProjectAction(EntityManagerInterface $em)
+    {
         $project = $em->getRepository('AppBundle:Project')
             ->findAll();
 
@@ -81,30 +95,10 @@ class ProjectController extends Controller
             throw $this->createNotFoundException(
                 'No product found for id '
             );
-
-        }else{
+        } else {
             return $this->render('nos_projets.html.twig', ['projects' => $project]);
         }
-
-
     }
 
-    /**
-     *AFFICHE tout les projets
-     */
-
-    public function showAllAction(EntityManagerInterface $em)
-    {
-        $product = $em->getRepository('AppBundle:Project')
-            ->findAll();
-
-        if (!$product) {
-            throw $this->createNotFoundException(
-                'No product found for id '
-            );
-        }
-
-        return $this->render('.html.twig');
-    }
 
 }
