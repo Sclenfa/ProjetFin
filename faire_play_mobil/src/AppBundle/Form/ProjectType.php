@@ -32,7 +32,7 @@ class ProjectType extends AbstractType
                 )
             )
             ->add('city')
-            ->add('photo', FileType::class)
+            ->add('photo', FileType::class, ['required' => false])
             ->add('participant')
             ->add('statut', ChoiceType::class, array(
                     'choices'  => array(
