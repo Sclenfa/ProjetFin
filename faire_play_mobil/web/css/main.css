@@ -87,9 +87,9 @@ button{
 
 /* nav connexion */
 
-#login li{
-    /*display: none;*/
-}
+/*#login li{
+    display: none;
+}*/
 
 /* nav navigation */
 header img {
@@ -138,5 +138,8 @@ footer a{
  footer img{
      width: 50%;
  }
+
+
+
 
 
