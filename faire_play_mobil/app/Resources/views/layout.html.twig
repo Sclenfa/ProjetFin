@@ -16,7 +16,7 @@
 </head>
 <body>
     <header>
-        <a href="{{ path('index') }}"><img src="{{ asset('img/logo.png') }}"></a>
+        <a href="{{ path('homepage') }}"><img src="{{ asset('img/logo.png') }}"></a>
         <nav id="login" class="fa fa-user">
             <ul>
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
