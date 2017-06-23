@@ -5,7 +5,6 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 
 class AdvertController extends Controller {
 
@@ -21,14 +20,6 @@ class AdvertController extends Controller {
      */
     public function nosProjetsAction(){
         return $this->render('nos_projets.html.twig');
-    }
-
-    /**
-     * @Route("/proposer", name="proposer")
-     *
-     */
-    public function proposerAction(){
-        return $this->render('proposer_un_projet.html.twig');
     }
 
     /**

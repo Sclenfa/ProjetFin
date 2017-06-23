@@ -10,7 +10,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 
 class ProjectController extends Controller
@@ -22,7 +21,7 @@ class ProjectController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        if (!empty($id)) {
+        if (!is_null($id)) {
             $project = $em->getRepository('AppBundle:Project')->find($id);
             $project->setCurrentPhoto($project->getPhoto());
             $project->setPhoto(null);
@@ -31,8 +30,6 @@ class ProjectController extends Controller
         }
 
         $form = $this->createForm(ProjectType::class, $project);
-
-
 
         $form->handleRequest($request);
 
@@ -49,7 +46,6 @@ class ProjectController extends Controller
                         $photoName
                     );
 
-                    //$project = $form->getData();
                     $project->setPhoto($photoName);
                 } else{
                     $project->setPhoto($project->getCurrentPhoto());
@@ -57,12 +53,11 @@ class ProjectController extends Controller
 
                 $em->persist($project);
                 $em->flush();
-                return new Response('Le projet est validé !');
+                //return new Response('Le projet est validé !');
             }
         }
-        return $this->render(':Admin:gestion_projets.html.twig', array('form' => $form->createView()));
+        return $this->render(':Admin:gestion_projets.html.twig', array('form' => $form->createView(), 'project' => $project));
     }
-
 
     /**
      * @Route("/fiche/{projectId}", name="fiche")
@@ -93,11 +88,21 @@ class ProjectController extends Controller
 
         if (!$project) {
             throw $this->createNotFoundException(
-                'No product found for id '
+                'Aucun projets trouver'
             );
         } else {
             return $this->render('nos_projets.html.twig', ['projects' => $project]);
         }
+    }
+
+    public function deleteProjectAction($projectId, EntityManagerInterface $em)
+    {
+        $project = $em->getRepository('AppBundle:Project')->find($projectId);
+
+        $em->remove($project);
+        $em->flush();
+
+        return $this->render(':Admin:gestion_projets.html.twig', array('form' => $form->createView()));
     }
 
 }

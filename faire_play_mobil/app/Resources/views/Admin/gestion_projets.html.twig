@@ -1,6 +1,7 @@
 {% extends ':Admin:layout_admin.html.twig' %}
 
 {% block content %}
+    <h2>{{ project.id }}</h2>
     {{ form_errors(form) }}
 
     {{ form_start(form) }}
@@ -41,4 +42,7 @@
     {{ form_widget(form.envoyer) }}
 
     {{ form_end(form) }}
+
+<button><a href="{{ path('suppression_de_projet', {'projectId' : project.id }) }}">Suppression</a></button>
+
 {% endblock %}
