@@ -8,12 +8,15 @@
     <title>Faire Play Mobil</title>
 
     <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/index.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick-theme.css">
 
 
 </head>
 <body>
     <header>
-        <a><img src="{{ asset('img/logo.png') }}"/></a>
+        <a href="{{ path('index') }}"><img src="{{ asset('img/logo.png') }}"></a>
         <nav id="login" class="fa fa-user">
             <ul>
                 <li><a href="{{ path('profil') }}">Mon profil</a></li>
@@ -41,6 +44,8 @@
             </ul>
 
         </nav>
+        <aside></aside>
+            <a href="#" id="burger"><i class="fa fa-bars" aria-hidden="true"></i></a>
         <nav id="nav">
             <ul>
                 <li><a href="{{ path('index') }}">Faire Play Mobil</a></li>
@@ -60,7 +65,7 @@
     <footer>
             <h2>N'hésitez pas à nous contacter !</h2>
             <article>
-                <p><a href="{{ path('nous-contacter') }}">Nous contacter</a></p>
+                <p><a href="{{ path('nous-contacter') }}" class="fa fa-paper-plane" aria-hidden="true"></a></p>
                 <p><img src="{{ asset('img/logo_footer.png') }}"></p>
                 <p><a href="#" class="fa fa-facebook" aria-hidden="true"></a></p>
             </article>
@@ -69,5 +74,12 @@
                 <a>Mentions légales</a>
             </article>
     </footer>
+    {# Carousel #}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
+    {# Burger #}
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/burger.js') }}"></script>
 </body>
 </html>

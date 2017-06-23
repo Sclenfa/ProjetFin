@@ -30,7 +30,6 @@ body{
 h1,h2,h3{
     font-family: 'Poiret One', cursive;
     margin-bottom: 1.5rem;
-    padding: 0 0 0 2rem;
 }
 
 h2{
@@ -47,7 +46,7 @@ section:first-child, section:nth-child(2), section:nth-child(4){
 }
 
 p{
-    margin: 3rem 2rem;
+    margin: 1.5rem 1.5rem;
     font-style: normal;
     font-weight: 400;
     font-family: 'Open Sans', sans-serif;
@@ -65,54 +64,103 @@ img{
     max-width: 100%;
 }
 
-ul{
-    list-style: none;
-}
 
 section{
     padding: 2rem 0 ;
 }
 
 button{
-    -webkit-border-radius: 4rem;
-    border-radius: 1.2rem;
-    padding: .5rem 2rem;
-    font-family: inherit;
+    padding: 1rem 2rem;
+    -webkit-border-radius: 1rem;
+    border-radius: 1.5rem;
     border-style: none;
-
+    font-family: Open sans;
+    font-weight: 400;
 }
+
+aside{
+    background-color: #db7c26;
+    min-height: .2rem;
+    transform: translateY(2.5rem);
+}
+
 /*
  Header
  */
+header {
+    position: relative;
+    margin-bottom: 5rem;
+}
 
+header img{
+    max-width: 50%;
+    transform: translate(-15%, 10%);
+    display: inline-block;
+    margin-right: 6rem;
+}
 /* nav connexion */
+#login{
+    font-size: 2.5rem;
+    line-height: 1.5rem;
+    color: #db7c26;
+}
+
+#login li{
+    list-style: none
+}
 
 /*#login li{
     display: none;
 }*/
 
-/* nav navigation */
-header img {
-    max-width: 50%;
-    float: left;
-    margin: 1rem 0 2rem 0;
+/* nav menu */
+#nav{
+    display: none;
 }
 
-#nav {
-    clear: both;
-
+#burger{
+    font-size: 1.8rem;
+    color: #d8572a;
+    background: #f7b538;
+    width: 4rem;
+    height: 4rem;
+    padding-top: .7rem;
+    border: .2rem solid #d8572a;
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%,10%);
+    transform: translate(-50%,10%);
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
 }
 
-#nav li {
-    padding : 0.7rem;
-    border: 0.15rem solid #db7c26;
-    border-radius: .4em;
-    background-color: #f7b538;
+#nav li{
+    background: #db7c26;
+    padding: .5rem;
+    margin-bottom: 0.5rem;
 }
 
-#nav li :not(:last-child){
-    margin-bottom: .3rem;
+#nav li:first-child{
+    margin-top: 3rem;
+}
 
+#nav li:last-child{
+    margin-bottom: 3rem;
+}
+
+#nav li:active{
+    background: #f7b538;
+}
+
+#nav li:active a{
+    color: #db7c26;
+    font-weight: 700;
+}
+
+#nav a{
+    color: white;
 }
 
 /*
@@ -127,7 +175,12 @@ footer a{
     display: inline-block;
 
 }
-
+footer h2{
+    font-size: 2rem;
+    color: white;
+    font-weight: 400;
+    margin: 0;
+}
  footer p {
      display: inline-block;
      max-width: 32%;
@@ -135,8 +188,10 @@ footer a{
      margin: auto;
  }
 
- footer img{
-     width: 50%;
+ footer .fa{
+     font-size: 2rem;
+     color: white;
+     margin: 3rem;
  }
 
 

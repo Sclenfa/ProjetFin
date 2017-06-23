@@ -1,47 +1,51 @@
 {% extends "layout.html.twig" %}
 {% block content %}
-<h2>Contactez-moi</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <section>
+        <h2>Contactez-moi</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </section>
 
-<form action="post">
+    <section>
+        <form action="post">
 
-    <article>
-        <label for="userName">Votre nom<b></b></label>
-        <input type="text" id="userName" name="name">
-    </article>
+            <article>
+                <label for="userName">Votre nom<b></b></label>
+                <input type="text" id="userName" name="name">
+            </article>
 
-    <article>
-        <label for="userEmail">Votre E-mail<b></b></label>
-        <input type="email" id="userEmail" name="email">
-    </article>
+            <article>
+                <label for="userEmail">Votre E-mail<b></b></label>
+                <input type="email" id="userEmail" name="email">
+            </article>
 
-    <article>
-        <label for="userSubject">Choisir un sujet<b></b></label>
+            <article>
+                <label for="userSubject">Choisir un sujet<b></b></label>
 
-        <select id="userSubject" name="subject">
-            <option value="null">- Sélectionner -</option>
-            <option value="infoasso">Informations sur l'association</option>
-            <option value="infoprojet">Informations sur les projets</option>
-            <option value="infosite">Problème sur le site</option>
-        </select>
-    </article>
+                <select id="userSubject" name="subject">
+                    <option value="null">- Sélectionner -</option>
+                    <option value="infoasso">Informations sur l'association</option>
+                    <option value="infoprojet">Informations sur les projets</option>
+                    <option value="infosite">Problème sur le site</option>
+                </select>
+            </article>
 
-    <article>
-        <label for="userMessage">Votre message<b></b></label>
-        <textarea id="userMessage" name="message"></textarea>
+            <article>
+                <label for="userMessage">Votre message<b></b></label>
+                <textarea id="userMessage" name="message"></textarea>
 
-        <p><input type="checkbox">Accepter les CG<b></b></p>
-    </article>
+                <p><input type="checkbox">Accepter les CG<b></b></p>
+            </article>
 
-    <input type="submit" value="Envoyer">
+            <input type="submit" value="Envoyer">
 
-</form>
+        </form>
+    </section>
 
-<!-- Modale pour remercier l'utilisateur -->
-<section id="modal">
-    <article>
-        <h2>Merci <span></span> !<i class="fa fa-times"></i></h2>
-        <p>Nous vous recontacterons dans les plus brefs délais</p>
-    </article>
-</section>
+    <!-- Modale pour remercier l'utilisateur -->
+    <section id="modal">
+        <article>
+            <h2>Merci <span></span> !<i class="fa fa-times"></i></h2>
+            <p>Nous vous recontacterons dans les plus brefs délais</p>
+        </article>
+    </section>
 {% endblock %}

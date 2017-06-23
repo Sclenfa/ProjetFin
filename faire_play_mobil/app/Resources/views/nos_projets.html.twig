@@ -5,36 +5,36 @@
 
     {#<link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />#}
 
-
+<section>
     <h2>Nos projets</h2>
     <p>Projets, créations et inventions pour aller à la rencontre des autres et fabriquer en s'amusant</p>
+</section>
 
+<section id="checkbox">
+    <p>Catégories :</p>
+    <form action="">
+        <input type="checkbox" name="category" value="arts_plastiques"> Arts plastiques<br>
+        <input type="checkbox" name="category" value="performance"> Performance<br>
+        <input type="checkbox" name="category" value="ateliers"> Ateliers<br>
+        <input type="checkbox" name="category" value="photographie"> Photographie<br>
+        <input type="checkbox" name="select-all" value="select-all"> Toutes les catégories<br>
+    </form>
 
-    <section id="checkbox">
-        <p>Catégories :</p>
+     <p>Status :</p>
         <form action="">
-            <input type="checkbox" name="category" value="arts_plastiques"> Arts plastiques<br>
-            <input type="checkbox" name="category" value="performance"> Performance<br>
-            <input type="checkbox" name="category" value="ateliers"> Ateliers<br>
-            <input type="checkbox" name="category" value="photographie"> Photographie<br>
-            <input type="checkbox" name="select-all" value="select-all"> Toutes les catégories<br>
+            <input type="checkbox" name="statut" value="en_cours"> En cours<br>
+            <input type="checkbox" name="statut" value="terminé"> Terminé<br>
+            <input type="checkbox" name="select-all" value="select-all"> Tous les projets<br>
         </form>
+</section>
 
-         <p>Status :</p>
-            <form action="">
-                <input type="checkbox" name="statut" value="en_cours"> En cours<br>
-                <input type="checkbox" name="statut" value="terminé"> Terminé<br>
-                <input type="checkbox" name="select-all" value="select-all"> Tous les projets<br>
-            </form>
-    </section>
-    <br>
-
+<section>
     {% for project in projects %}
         <figure>
             <img src="{{ asset('img/' ~ project.photo) }} " alt="Projet">
             <figcaption>{{ project.name }}<button><a href="{{ path('fiche', {projectId: project.id}) }}">Afficher les détails</a></button></figcaption>
         </figure>
     {% endfor %}
-
+</section>
 {% endblock %}
 

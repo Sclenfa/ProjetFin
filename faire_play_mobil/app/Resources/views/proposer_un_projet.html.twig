@@ -2,46 +2,50 @@
 
 
 {% block content %}
+    <section>
         <h3>Formulaire d'ajout de projets</h3>
 
         <p>
             Chez Faire Play Mobile, la philosophie est simple : nos projets s'articulent autour de l'humain, du respect de l'environnement, et de l'innovation. Recyclons les vieilles choses pour en faire « des objets inutiles mais d'une importance capitale ! »
             Si vous avez un projet qui s'accorde avec ces principes, proposez-le nous !
         </p>
+    </section>
 
-    {{ form_start(form) }}
+    <section>
+        {{ form_start(form) }}
 
-        {{ form_label(form.name) }}
-        {{ form_widget(form.name) }}
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
 
-        {{ form_label(form.description) }}
-        {{ form_widget(form.description) }}
+            {{ form_label(form.description) }}
+            {{ form_widget(form.description) }}
 
-        {{ form_label(form.category) }}
-        {{ form_widget(form.category) }}
+            {{ form_label(form.category) }}
+            {{ form_widget(form.category) }}
 
-        {{ form_label(form.address) }}
-        {{ form_widget(form.address) }}
+            {{ form_label(form.address) }}
+            {{ form_widget(form.address) }}
 
-        {{ form_label(form.city) }}
-        {{ form_widget(form.city) }}
+            {{ form_label(form.city) }}
+            {{ form_widget(form.city) }}
 
-        {{ form_label(form.cp) }}
-        {{ form_widget(form.cp) }}
+            {{ form_label(form.cp) }}
+            {{ form_widget(form.cp) }}
 
-        {{ form_label(form.photo) }}
-        {{ form_widget(form.photo) }}
+            {{ form_label(form.photo) }}
+            {{ form_widget(form.photo) }}
 
-        {{ form_label(form.date_begin) }}
-        {{ form_widget(form.date_begin) }}
+            {{ form_label(form.date_begin) }}
+            {{ form_widget(form.date_begin) }}
 
-        {{ form_label(form.date_end) }}
-        {{ form_widget(form.date_end) }}
+            {{ form_label(form.date_end) }}
+            {{ form_widget(form.date_end) }}
 
-        {{ form_label(form.participant) }}
-        {{ form_widget(form.participant) }}
+            {{ form_label(form.participant) }}
+            {{ form_widget(form.participant) }}
 
-        {{ form_widget(form.envoyer) }}
+            {{ form_widget(form.envoyer) }}
 
-        {{ form_end(form) }}
+            {{ form_end(form) }}
+    </section>
     {% endblock %}
