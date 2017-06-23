@@ -24,6 +24,14 @@ class AdvertController extends Controller {
     }
 
     /**
+     * @Route("/proposer", name="proposer")
+     *
+     */
+    public function proposerAction(){
+        return $this->render('proposer_un_projet.html.twig');
+    }
+
+    /**
      * @Route("/soutenir", name="nous-soutenir")
      */
     public function soutenirAction(){
@@ -36,4 +44,15 @@ class AdvertController extends Controller {
     public function contactAction(){
         return $this->render('nous_contacter.html.twig');
     }
+
+
+    /**
+     * @Route("/profil", name="profil")
+     */
+    public function profilAction(){
+        return $this->render('profil.html.twig');
+    }
+
+
+
 }
