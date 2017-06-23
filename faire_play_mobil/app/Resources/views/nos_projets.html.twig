@@ -20,11 +20,13 @@
             <input type="checkbox" name="select-all" value="select-all"> Toutes les catégories<br>
         </form>
 
-         <p>Status :</p>
+         <p>Statut :</p>
             <form action="">
                 <input type="checkbox" name="statut" value="en_cours"> En cours<br>
                 <input type="checkbox" name="statut" value="terminé"> Terminé<br>
                 <input type="checkbox" name="select-all" value="select-all"> Tous les projets<br>
+
+                <input type="submit" name="Rechercher" value="Rechercher">
             </form>
     </section>
     <br>
@@ -32,7 +34,7 @@
     {% for project in projects %}
         <figure>
             <img src="{{ asset('img/' ~ project.photo) }} " alt="Projet">
-            <figcaption>{{ project.name }}<button><a href="{{ path('fiche', {projectId: project.id}) }}">Afficher les détails</a></button></figcaption>
+            <figcaption>{{ project.id }}<button><a href="{{ path('fiche', {projectId: project.id}) }}">Afficher les détails</a></button></figcaption>
         </figure>
     {% endfor %}
 

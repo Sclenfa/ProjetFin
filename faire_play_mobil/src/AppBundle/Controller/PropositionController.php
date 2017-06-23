@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Project;
 use AppBundle\Form\PropositionType;
+use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Swift_Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -65,14 +66,10 @@ class PropositionController extends Controller
 
                 return new Response('Merci !');
 
-
-
-
             }
         }
 
         return $this->render('proposer_un_projet.html.twig', array('form' => $form->createView()));
-
 
     }
 }

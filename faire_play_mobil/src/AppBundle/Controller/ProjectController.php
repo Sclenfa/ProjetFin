@@ -74,7 +74,7 @@ class ProjectController extends Controller
 
         if (!$project) {
             throw $this->createNotFoundException(
-                'Aucun projet trouver' . $projectId
+                'Aucun projet trouvé' . $projectId
             );
         } else {
             return $this->render('fiche_projet.html.twig', ['project' => $project]);
@@ -88,17 +88,23 @@ class ProjectController extends Controller
      */
     public function allProjectAction(EntityManagerInterface $em)
     {
-        $project = $em->getRepository('AppBundle:Project')
+        $projects = $em->getRepository('AppBundle:Project')
             ->findAll();
 
-        if (!$project) {
+        if (!$projects) {
             throw $this->createNotFoundException(
-                'No product found for id '
+                'Aucun projet trouvé '
             );
         } else {
-            return $this->render('nos_projets.html.twig', ['projects' => $project]);
+            return $this->render('nos_projets.html.twig', ['projects' => $projects]);
         }
     }
+
+
+
+
+
+
 
 
 }
