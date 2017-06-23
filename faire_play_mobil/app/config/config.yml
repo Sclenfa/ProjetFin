@@ -105,7 +105,8 @@ fos_user:
             enabled:    false # change to true for required email confirmation
             template:   '@FOSUser/Registration/email.txt.twig'
         form:
-            type:               FOS\UserBundle\Form\Type\RegistrationFormType # or 'fos_user_registration' on Symfony < 2.8
+#            type:               FOS\UserBundle\Form\Type\RegistrationFormType # or 'fos_user_registration' on Symfony < 2.8
+            type:               AppBundle\Form\UserType
             name:               fos_user_registration_form
             validation_groups:  [Registration, Default]
     resetting:
@@ -125,3 +126,4 @@ fos_user:
         username_canonicalizer: fos_user.util.canonicalizer.default
         token_generator:        fos_user.util.token_generator.default
         user_manager:           fos_user.user_manager.default
+

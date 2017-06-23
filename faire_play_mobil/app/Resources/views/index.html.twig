@@ -41,7 +41,6 @@
 
 
             </div>
-            </div>
 
         </article>
 
@@ -98,7 +97,7 @@
 
             <p>Vous souhaitez proposer ou participer à un projet ?</p>
         </article>
-        <button><a href="{{ path('proposer-un-projet') }}">Proposer</a></button>
+        <button><a href="{{ path('proposer') }}">Proposer</a></button>
 
         <button><a href="{{ path('nos-projets') }}">Participer</a></button>
 
@@ -109,28 +108,16 @@
     <section>
         <h2>Quelques projets</h2>
         <p>Naviguez parmi nos projets ludiques !</p>
-        <a href="{{ path('nos-projets') }}">En savoir plus</a>
+        <a href="nos_projets.html.twig">En savoir plus</a>
 
         {% for project in projects %}
-        <figure>
-            <img src="{{ asset('img/' ~ project.photo) }} " alt="Projet 1">
-            <figcaption><a href="{{ path ('fiche/1') }}">Projet<b>Le Segway, cinéma ambulant</b></a></figcaption>
-        </figure>
-
-        <figure>
-            <img src="{{ asset ('img/' ~ project.photo) }}" alt="Projet 2">
-            <figcaption><a href="{{ path ('fiche/2') }}">Projet<b>La Caravane - La Boîte à Créer</b></a></figcaption>
-        </figure>
-
-        <figure>
-            <img src="{{ asset ('img/' ~ project.photo) }}" alt="Projet 3 : le bicyclettoscope">
-            <figcaption><a href="">Projet<b>Le bicyclettoscope</b></a></figcaption>
-        </figure>
-
+            <figure>
+                <img src="{{ asset('img/'~project.photo) }}" alt="{{ project.name }}">
+                <figcaption><a href="">{{ project.name }}</a></figcaption>
+            </figure>
         {% endfor %}
+
     </section>
-
-
 
 {% endblock %}
 
