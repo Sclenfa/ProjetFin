@@ -43,11 +43,13 @@ class ProjectController extends Controller
                 $photo = $project->getPhoto();
 
                 if ($photo instanceof UploadedFile){
-                    $photoName = uniqid() . $photo->getClientOriginalName();
+                    $photoName = $photo->getClientOriginalName();
                     $photo->move(
                         $this->getParameter('img_directory'),
                         $photoName
                     );
+
+
 
                     //$project = $form->getData();
                     $project->setPhoto($photoName);
@@ -101,7 +103,7 @@ class ProjectController extends Controller
     }
 
 
-
+    
 
 
 

@@ -36,8 +36,16 @@ class PropositionController extends Controller
                     uniqid().$photo->getClientOriginalName()
                 );
 
+                $currentPhoto = uniqid().$photo->getClientOriginalName();
+
+                //$project = $form->getData();
+                $project->setPhoto( $currentPhoto);
+
+
                 //$project = $form->getData();
                 $project->setPhoto( $photo->getClientOriginalName());
+
+
 
                 /**
                  * envoi en base
