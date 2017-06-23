@@ -1,31 +1,26 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Etudiant
- * Date: 22/06/2017
- * Time: 10:39
- */
 
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('description')
+        $builder->add('description', TextareaType::class)
                 ->add('ville')
         ;
     }
 
     public function getParent()
     {
-        return 'fos_user_registration';
+        return 'FOS\UserBundle\Form\Type\RegistrationFormType';
     }
 
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'app_user_registration';
     }

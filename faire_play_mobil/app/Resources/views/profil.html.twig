@@ -2,7 +2,11 @@
 
 
 {% block content %}
-    <h3>Bonjour {{ user.username }}</h3>
+    <h2>Bonjour {{ user.username }}</h2>
+
+    <p>Votre Email : {{ user.email }}</p>
+    <p>Votre Ville : {{ user.ville }}</p>
+    <p>Votre Description : {{ user.description }}</p>
     
     <button><a href="{{ absolute_url('profile/edit') }}">Modification du profil</a></button>
     <button><a href="{{ absolute_url('profile/change-password') }}">Changer de Mot de Passe</a></button>
