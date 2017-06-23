@@ -10,13 +10,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 
 class ProjectController extends Controller
 {
     /**
-     * @Route ("/admin/gestion_projets/{id}", name="gestion_projets", defaults={"id": null})
+     * @Route ("/admin/modification/{id}", name="modification_projets")
      */
     public function editAction(Request $request, $id = null)
     {
@@ -57,10 +56,11 @@ class ProjectController extends Controller
 
                 $em->persist($project);
                 $em->flush();
-                return new Response('Le projet est validé !');
+
+                return $this->redirectToRoute('gestion_projets');
             }
         }
-        return $this->render(':Admin:gestion_projets.html.twig', array('form' => $form->createView()));
+        return $this->render(':Admin:modif_projet.html.twig', array('form' => $form->createView()));
     }
 
 
@@ -99,12 +99,5 @@ class ProjectController extends Controller
             return $this->render('nos_projets.html.twig', ['projects' => $projects]);
         }
     }
-
-
-
-
-
-
-
 
 }

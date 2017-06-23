@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class IndexController extends Controller
 {
     /**
-     * @Route("/index", name="index")
+     * @Route("/", name="homepage")
      */
     public function exempleProjetAction(EntityManagerInterface $em)
     {

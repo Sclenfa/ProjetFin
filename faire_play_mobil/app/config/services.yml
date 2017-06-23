@@ -37,3 +37,8 @@ services:
         class: AppBundle\Form\UserType
         tags:
             - { name: form.type, alias: app_user_registration }
+
+    app.form.resetting:
+        class: AppBundle\Form\resettingUserType
+        tags:
+            - { name: form.type, alias: app_user_profile }

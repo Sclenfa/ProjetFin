@@ -1,44 +1,43 @@
-{% extends ':Admin:layout_admin.html.twig' %}
+{% extends '::layout.html.twig' %}
 
 {% block content %}
-    {{ form_errors(form) }}
-
-    {{ form_start(form) }}
-
-    {{ form_label(form.name) }}
-    {{ form_widget(form.name) }}
-
-    {{ form_label(form.description) }}
-    {{ form_widget(form.description) }}
-
-    {{ form_label(form.category) }}
-    {{ form_widget(form.category) }}
-
-    {{ form_label(form.address) }}
-    {{ form_widget(form.address) }}
-
-    {{ form_label(form.city) }}
-    {{ form_widget(form.city) }}
-
-    {{ form_label(form.cp) }}
-    {{ form_widget(form.cp) }}
-
-    {{ form_label(form.photo) }}
-    {{ form_widget(form.photo) }}
-
-    {{ form_label(form.date_begin) }}
-    {{ form_widget(form.date_begin) }}
-
-    {{ form_label(form.date_end) }}
-    {{ form_widget(form.date_end) }}
-
-    {{ form_label(form.participant) }}
-    {{ form_widget(form.participant) }}
-
-    {{ form_label(form.statut) }}
-    {{ form_widget(form.statut) }}
-
-    {{ form_widget(form.envoyer) }}
-
-    {{ form_end(form) }}
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Ville</th>
+            <th>Adress</th>
+            <th>Code Postal</th>
+            {#<th>Date de début</th>#}
+            {#<th>Date de fin</th>#}
+            <th>Categorie</th>
+            <th>Photo</th>
+            <th>Nombre de Participant</th>
+            <th>Statut</th>
+            <th>Modifier/Supprimer</th>
+        </tr>
+    {% for project in projects %}
+        <tr>
+            <td>{{ project.name }}</td>
+            <td>{{ project.description }}</td>
+            <td>{{ project.city }}</td>
+            <td>{{ project.address }}</td>
+            <td>{{ project.cp }}</td>
+            {#<td>{{ project.dateBegin }}</td>#}
+            {#<td>{{ project.dateEnd }}</td>#}
+            <td>{{ project.category }}</td>
+            <td>{{ project.photo }}</td>
+            <td>{{ project.participant }}</td>
+            <td>{{ project.statut }}</td>
+            <td>
+                <button>
+                    <a href="{{ path('modification_projets', {'id' : project.id}) }}">Modifier</a>
+                </button>
+                <button>
+                    <a href="{{ path('suppression_de_projet', {'idProjet' : project.id}) }}">Supprimer</a>
+                </button>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
 {% endblock %}

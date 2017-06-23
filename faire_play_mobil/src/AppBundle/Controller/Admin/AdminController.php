@@ -1,11 +1,10 @@
 <?php
 
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\Admin;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 
 class AdminController extends Controller
 {
@@ -17,12 +16,7 @@ class AdminController extends Controller
         return $this -> render(':Admin:administration.html.twig');
     }
 
-    /**
-     * @Route ("/admin/gestion_membre", name="gestion_membre")
-     */
-    public function membreAction(){
-        return $this -> render(':Admin:gestion_membre.html.twig');
-    }
+
 
     /**
      * @Route ("/admin/gestion_projets", name="gestion_projets")

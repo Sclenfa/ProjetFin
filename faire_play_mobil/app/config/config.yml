@@ -89,7 +89,8 @@ fos_user:
         sender_name: "faire_play_mobil"
     profile:
         form:
-            type:               FOS\UserBundle\Form\Type\ProfileFormType # or 'fos_user_profile' on Symfony < 2.8
+#            type:               FOS\UserBundle\Form\Type\ProfileFormType # or 'fos_user_profile' on Symfony < 2.8
+            type:               AppBundle\Form\resettingUserType
             name:               fos_user_profile_form
             validation_groups:  [Profile, Default]
     change_password:
@@ -118,6 +119,7 @@ fos_user:
             template:   '@FOSUser/Resetting/email.txt.twig'
         form:
             type:               FOS\UserBundle\Form\Type\ResettingFormType # or 'fos_user_resetting' on Symfony < 2.8
+#            type:               AppBundle\Form\resettingUserType
             name:               fos_user_resetting_form
             validation_groups:  [ResetPassword, Default]
     service:
