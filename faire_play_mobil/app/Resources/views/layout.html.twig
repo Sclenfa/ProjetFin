@@ -20,16 +20,23 @@
         <a><img src="{{ asset('img/logo.png') }}"/></a>
         <nav id="login" class="fa fa-user">
             <ul>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 <li><a href="{{ path('profil') }}">Mon profil</a></li>
                 <li>
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                        <a href="{{ path('fos_user_security_logout') }}">
-                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                        </a>
-                    {% else %}
+
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                    <a href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                </li>
+                {% else %}
+                    <li>
                         <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-                    {% endif %}
+                    </li>
+                    <li>
+                        <a href="{{ absolute_url('register/') }}">Inscription</a>
+                    </li>
+                {% endif %}
 
                     {% if app.request.hasPreviousSession %}
                         {% for type, messages in app.session.flashbag.all() %}

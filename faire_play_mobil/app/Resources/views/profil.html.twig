@@ -2,21 +2,8 @@
 
 
 {% block content %}
-    <h2>Mon profil</h2>
-
-    <h3>Bonjour '#'</h3>
-
-    <section><h4>Voici vos informations de profil : </h4>
-
-
-        <p>Votre email : '  '</p>
-        <p>Vos projets en cours : ' '</p>
-    </section>
-
+    <h3>Bonjour {{ user.username }}</h3>
+    
+    <button><a href="{{ absolute_url('profile/edit') }}">Modification du profil</a></button>
+    <button><a href="{{ absolute_url('profile/change-password') }}">Changer de Mot de Passe</a></button>
 {% endblock %}
-
-=======
-
-
-{% endblock %}
->>>>>>> Stashed changes

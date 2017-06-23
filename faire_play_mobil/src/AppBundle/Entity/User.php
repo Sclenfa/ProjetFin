@@ -21,6 +21,28 @@ class User extends BaseUser
     protected $id;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     *
+     * @Assert\Length(
+     *     min=3,
+     *     max=255
+     * )
+     */
+    protected $description;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     *
+     * @Assert\Length(
+     *     min=3,
+     *     max=255
+     * )
+     */
+    protected $ville;
+
+    /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      * @ORM\ManyToMany(targetEntity="Project", inversedBy="users")
      * @ORM\JoinTable(name="users_projects")
