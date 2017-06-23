@@ -1,5 +1,22 @@
-{% extends ':Admin:layout_admin.html.twig' %}
+{% extends '::layout.html.twig' %}
 
 {% block content %}
-
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Ville</th>
+            <th>Description</th>
+            <th>Email</th>
+            <th>Supprimer Membre</th>
+        </tr>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.username }}</td>
+            <td>{{ user.ville }}</td>
+            <td>{{ user.description }}</td>
+            <td>{{ user.email }}</td>
+            <td><button><a href="{{ path('suppression_de_membre', {'idMembre' : user.id}) }}">Supprimer</a></button></td>
+        </tr>
+    {% endfor %}
+    </table>
 {% endblock %}

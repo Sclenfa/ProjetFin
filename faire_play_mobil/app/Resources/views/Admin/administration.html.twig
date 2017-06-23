@@ -1,5 +1,26 @@
-{% extends ':Admin:layout_admin.html.twig' %}
+{% extends '::layout.html.twig' %}
 
 {% block content %}
+    <h2>Bienvenue dans le panneau d'administration.</h2>
 
+    <h3>Ici vous avez accès à la gestion des membres et la gestion des projets.</h3>
+    <table>
+        <tr>
+            <th>Gestion membres</th>
+            <th>Gestion projets</th>
+        </tr>
+        <tr>
+            <td>
+                Dans la gestion des membres vous avez la possibilité de consulter la liste des membres inscrits. Vous pouvez également supprimer des comptes utilisateurs si besoin.
+            </td>
+            <td>
+                Dans la gestion des projets vous avez la possibilité de consulter la liste des projets, de mettre à jours leur statut ('en cours, terminé'). Les projets proposés sont par défaut 'en attente', pour leur mise en ligne vous devrez modifier leur statut
+                Vous pourrez aussi modifier et supprimer un projet au besoin.
+            </td>
+        </tr>
+        <tr>
+            <td><button><a href="{{ path('gestion_membre') }}">Gestion des membres</a></button></td>
+            <td><button><a href="{{ path('gestion_projets') }}">Gestion des projets</a></button></td>
+        </tr>
+    </table>
 {% endblock %}
