@@ -8,12 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AdvertController extends Controller {
 
-    /**
-     * @Route("/index", name="index")
-     */
-    public function indexAction(){
-        return $this->render('index.html.twig');
-    }
+
 
     /**
      * @Route("/nos-projets", name="nos-projets")

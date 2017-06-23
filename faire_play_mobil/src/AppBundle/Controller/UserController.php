@@ -31,4 +31,17 @@ class UserController extends Controller
 
     }
 
+    /**
+     * @Route("/profil", name="profil")
+     */
+    public function showUserByIdAction(EntityManagerInterface $em)
+    {
+        //$idUser = $em->getRepository('AppBundle:User')->find($id);
+
+        $user = $this->getUser();
+
+        return $this->render('profil.html.twig', ['user' => $user]);
+
+    }
+
 }

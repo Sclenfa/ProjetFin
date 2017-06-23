@@ -41,7 +41,6 @@
 
 
             </div>
-            </div>
 
         </article>
 
@@ -91,7 +90,7 @@
         <article>
             <h2>Comment ça marche ? </h2>
 
-            <p> Faire Play Mobile est la plategorme qui poursuit sur le Web l'aventure collective et poétique du réel.
+            <p> Faire Play Mobile est la plateforme qui poursuit sur le Web l'aventure collective et poétique du réel.
                 Nous sommes là pour mettre en relation des porteurs de compétences avec les projets proposés par l'association. Chacun est également le bienvenu pour proposer un projet.
 
             </p>
@@ -109,22 +108,14 @@
     <section>
         <h2>Quelques projets</h2>
         <p>Naviguez parmi nos projets ludiques !</p>
-        <a href="nos_projets.html.twig">En savoir plus</a>
+       
 
-        <figure>
-            <img src="" alt="Projet 1 : le Segway">
-            <figcaption><a href="">Projet<b>Le Segway, cinéma ambulant</b></a></figcaption>
-        </figure>
-
-        <figure>
-            <img src="#" alt="Projet 2 : la Caravane">
-            <figcaption><a href="">Projet<b>La Caravane - La Boîte à Créer</b></a></figcaption>
-        </figure>
-
-        <figure>
-            <img src="#" alt="Projet 3 : le bicyclettoscope">
-            <figcaption><a href="">Projet<b>Le bicyclettoscope</b></a></figcaption>
-        </figure>
+        {% for project in projects %}
+            <figure>
+                <img src="{{ asset('img/'~project.photo) }}" alt="{{ project.name }}">
+                <figcaption><a href="{{ path('nos-projets') }}">{{ project.name }}</a></figcaption>
+            </figure>
+        {% endfor %}
 
     </section>
 

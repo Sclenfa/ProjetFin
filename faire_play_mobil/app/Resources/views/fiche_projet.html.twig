@@ -1,40 +1,22 @@
 {% extends "layout.html.twig" %}
 {% block content %}
-<h2>La Caravane - La Boîte à Créer</h2>
 
-<img src="#" alt="Projet 1 : projet Caravane">
+<h2>{{ project.name }}</h2>
 
-<iframe src="" frameborder="0">Localisation du projet</iframe>
+    <p>{{ project.description }}</p>
 
-<h3>Description</h3>
-<p>La Caravane est un atelier-galerie d'animation mobile (eh oui, profitons de l'effet « Caravane » ! ), véritable source d'inspiration dans les quartiers où elle se pose.
-    Le but ? Aller aux devants des gens par la mobilité, leur transmettre des métiers en voie de disparition, réveiller le regard poétique et le goût de chacun. </p>
+    <img src="{{ asset('img/' ~ project.photo) }} " alt="Projet">
 
-    Atelier de bricolage et d'expression artistique ambulant, la Caravane accueille tous ceux qui ont envie de transformer objets ou meubles, ou tout simplement d'apprendre à bricoler !
+    <h3>Localisation : <p>{{ project.address }} {{ project.cp }} {{ project.city }}</p></h3>
 
-    <span>100% « Faire », « Play » et « Mobile » </span>
+    <h3>Catégorie de projet : <p>{{ project.category }}</p></h3>
 
-    La Caravane représente l'esprit de l'association par excellence :
-
-    « Faire » : soi-même, de ses propres mains, et avec les autres
-    « Play » : parce que la création est aussi jeu
-    « Mobile » : un lieu mobile qui est aussi un prétexte à réunir, à créer du lien, à aller vers tous les gens quel que soit leur milieu social.
-
-    Une ligne directrice : le recyclage, la construction, les inventions avec des matériaux de récupération.
-    Aujourd'hui sont disponibles des ateliers sérigraphie, pochoirs, bois et métal, cinéma, couture et écriture.
-
-    <span>La Boîte à Créer</span>
-
-    La Boîte à Créer est une extension du projet Caravane, une sorte de grosse boîte à outils mobile, sortie tout droit de nos rêves d'enfant, qui propose différents ateliers : atelier recyclage Lumière, illusion d'optique, pochoirs, sérigraphie, travail du bois et du métal pour la construction...
+    <h3>Nombre de participants au projet : <p>{{ project.participant }}</p></h3>
 
 
-    <h3>Détails</h3>
-<ul>
-    <li>Date de début de projet : </li>
-    <li>Date de fin de projet : </li>
-    <li>Nombre de participants: </li>
-</ul>
-<button>Je veux participer au projet !</button>
+
+
+    <button>Je veux participer au projet !</button>
 
 
 <section>
@@ -51,11 +33,10 @@
         <textarea id="competences" name="competences"></textarea>
 
         <input type="submit" name="participer" value="participer">
-
+    </form>
 </section>
 
 <section>
-    <h3>D'autres projets qui pourraient vous intéresser</h3>
-    <a href="#"><img src="#" alt="">En savoir plus</a>
+    <h3><a href="{{ path('nos-projets') }}">D'autres projets qui pourraient vous intéresser</a></h3>
 </section>
 {% endblock %}
