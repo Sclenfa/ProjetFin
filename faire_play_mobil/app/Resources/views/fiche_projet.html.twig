@@ -4,6 +4,7 @@
 <h2>{{ project.name }}</h2>
 
     <p>{{ project.description }}</p>
+
     <img src="{{ asset('img/' ~ project.photo) }} " alt="Projet">
 
     <h3>Localisation : <p>{{ project.address }} {{ project.cp }} {{ project.city }}</p></h3>
@@ -11,6 +12,8 @@
     <h3>Catégorie de projet : <p>{{ project.category }}</p></h3>
 
     <h3>Nombre de participants au projet : <p>{{ project.participant }}</p></h3>
+
+
 
 
     <button>Je veux participer au projet !</button>
@@ -30,7 +33,7 @@
         <textarea id="competences" name="competences"></textarea>
 
         <input type="submit" name="participer" value="participer">
-
+    </form>
 </section>
 
 <section>

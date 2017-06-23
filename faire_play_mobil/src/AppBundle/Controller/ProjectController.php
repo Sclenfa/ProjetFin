@@ -21,7 +21,7 @@ class ProjectController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        if (!empty($id)) {
+        if (!is_null($id)) {
             $project = $em->getRepository('AppBundle:Project')->find($id);
             $project->setCurrentPhoto($project->getPhoto());
             $project->setPhoto(null);
@@ -30,8 +30,6 @@ class ProjectController extends Controller
         }
 
         $form = $this->createForm(ProjectType::class, $project);
-
-
 
         $form->handleRequest($request);
 
@@ -48,7 +46,6 @@ class ProjectController extends Controller
                         $photoName
                     );
 
-                    //$project = $form->getData();
                     $project->setPhoto($photoName);
                 } else{
                     $project->setPhoto($project->getCurrentPhoto());
@@ -98,6 +95,16 @@ class ProjectController extends Controller
         } else {
             return $this->render('nos_projets.html.twig', ['projects' => $projects]);
         }
+    }
+
+    public function deleteProjectAction($projectId, EntityManagerInterface $em)
+    {
+        $project = $em->getRepository('AppBundle:Project')->find($projectId);
+
+        $em->remove($project);
+        $em->flush();
+
+        return $this->render(':Admin:gestion_projets.html.twig', array('form' => $form->createView()));
     }
 
 }

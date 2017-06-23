@@ -18,14 +18,6 @@ class AdvertController extends Controller {
     }
 
     /**
-     * @Route("/proposer", name="proposer")
-     *
-     */
-    public function proposerAction(){
-        return $this->render('proposer_un_projet.html.twig');
-    }
-
-    /**
      * @Route("/soutenir", name="nous-soutenir")
      */
     public function soutenirAction(){

@@ -4,11 +4,10 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Project;
 use AppBundle\Form\PropositionType;
-use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Swift_Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 
 
@@ -28,20 +27,22 @@ class PropositionController extends Controller
 
         if ($form->isSubmitted()) {
             $em = $this->getDoctrine()->getManager();
+
             if ($form->isValid()) {
 
                 $photo = $project->getPhoto();
-                $photo->move(
-                    $this->getParameter('img_directory'),
-                    uniqid().$photo->getClientOriginalName()
-                );
 
-                //$project = $form->getData();
-                $project->setPhoto( $photo->getClientOriginalName());
+                if($photo instanceof UploadedFile){
+                    $photoName = uniqid() . $photo -> getClientOriginalName();
+                    $photo->move(
+                        $this->getParameter('img_directory'),
+                        $photoName
+                    );
+                    $project->setPhoto($photoName);
+                }else{
+                    $project->setPhoto($project->getCurrentPhoto());
+                }
 
-                /**
-                 * envoi en base
-                 */
                 $em->persist($project);
                 $em->flush();
 
@@ -64,12 +65,11 @@ class PropositionController extends Controller
                 $mailer->send($message);
 
 
-                return new Response('Merci !');
+                //return new Response('Merci !');
+                return $this ->redirectToRoute('nos-projets');
 
             }
         }
-
         return $this->render('proposer_un_projet.html.twig', array('form' => $form->createView()));
-
     }
 }
