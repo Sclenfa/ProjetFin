@@ -36,6 +36,14 @@ class Project
     protected $name;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank()
+     * @Assert\Length(max=255)
+     */
+    protected $email;
+
+    /**
      * @ORM\Column(type="text")
      *
      * @Assert\NotBlank()
@@ -156,6 +164,24 @@ class Project
     public function setUsers($users)
     {
         $this->users = $users;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     * @return Project
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
         return $this;
     }
 

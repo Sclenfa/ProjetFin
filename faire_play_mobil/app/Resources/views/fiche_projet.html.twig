@@ -1,62 +1,38 @@
 {% extends "layout.html.twig" %}
 {% block content %}
-<section>
-    <h2>La Caravane - La Boîte à Créer</h2>
+    <section>
+        <article>
+        <h2>{{ project.name }}</h2>
 
-    <img src="#" alt="Projet 1 : projet Caravane">
+        <p>{{ project.description }}</p>
 
-    <iframe src="" frameborder="0">Localisation du projet</iframe>
+        </article>
+        <article>
+            <h3>Localisation : <p>{{ project.address }} {{ project.cp }} {{ project.city }}</p></h3>
 
-    <h3>Description</h3>
-    <p>La Caravane est un atelier-galerie d'animation mobile (eh oui, profitons de l'effet « Caravane » ! ), véritable source d'inspiration dans les quartiers où elle se pose.
-        Le but ? Aller aux devants des gens par la mobilité, leur transmettre des métiers en voie de disparition, réveiller le regard poétique et le goût de chacun.
+            <h3>Catégorie de projet : <p>{{ project.category }}</p></h3>
 
-        Atelier de bricolage et d'expression artistique ambulant, la Caravane accueille tous ceux qui ont envie de transformer objets ou meubles, ou tout simplement d'apprendre à bricoler !
+            <h3>Nombre de participants au projet : <p>{{ project.participant }}</p></h3>
+            <button><a href="">Nous Soutenir</a></button>
+        </article>
+    </section>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {% if project.statut == "en_cours" %}
+            <button><a href="{{ path('participer', {projectId: project.id}) }}">Participer</a></button>
+        {% elseif project.statut == "terminer" %}
+            <p>Ce projet est terminé :</p>
+            <button><a href="{{ path('nos-projets') }}">Retourner à la liste des projets</a></button>
+        {% endif %}
+    {% else %}
+        {% if project.statut == "terminer" %}
+            <p>Ce projet est terminé :</p>
+            <button><a href="{{ path('nos-projets') }}">Retourner à la liste des projets</a></button>
+        {% elseif project.statut == "en_cours" %}
+            <p>Pour Participer Veuillez vous connectez.</p>
+            <button><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></button>
+        {% endif %}
+    {% endif %}
 
-        <span>100% « Faire », « Play » et « Mobile » </span>
+    <img src="{{ asset('img/' ~ project.photo) }} " alt="{{ project.name }}">
 
-        La Caravane représente l'esprit de l'association par excellence :
-
-        « Faire » : soi-même, de ses propres mains, et avec les autres
-        « Play » : parce que la création est aussi jeu
-        « Mobile » : un lieu mobile qui est aussi un prétexte à réunir, à créer du lien, à aller vers tous les gens quel que soit leur milieu social.
-
-        Une ligne directrice : le recyclage, la construction, les inventions avec des matériaux de récupération.
-        Aujourd'hui sont disponibles des ateliers sérigraphie, pochoirs, bois et métal, cinéma, couture et écriture.
-
-        <span>La Boîte à Créer</span>
-
-        La Boîte à Créer est une extension du projet Caravane, une sorte de grosse boîte à outils mobile, sortie tout droit de nos rêves d'enfant, qui propose différents ateliers : atelier recyclage Lumière, illusion d'optique, pochoirs, sérigraphie, travail du bois et du métal pour la construction...</p>
-</section>
-
-<section>
-    <h3>Détails</h3>
-    <ul>
-        <li>Date de début de projet : </li>
-        <li>Date de fin de projet : </li>
-        <li>Nombre de participants: </li>
-    </ul>
-    <button>Je veux participer au projet !</button>
-</section>
-
-<section>
-<!-- Demander la connexion pour afficher le formulaire -->
-    <form action="" method="post">
-        <input type="hidden" name="id_projet" value="#" >
-        <input type="hidden" name="id_membre" value="#" >
-
-        <label for="choix_projet">Pourquoi je choisis ce projet</label>
-        <textarea id="choix_projet" name="choix_projet"></textarea><br>
-
-        <label for="competences">Ce que j'amène au projet</label>
-        <textarea id="competences" name="competences"></textarea>
-
-        <input type="submit" name="participer" value="participer">
-    </form>
-</section>
-
-<section>
-    <h3>D'autres projets qui pourraient vous intéresser</h3>
-    <a href="#"><img src="#" alt="">En savoir plus</a>
-</section>
 {% endblock %}
