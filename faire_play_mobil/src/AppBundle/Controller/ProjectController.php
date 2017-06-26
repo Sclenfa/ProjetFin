@@ -10,6 +10,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 
 class ProjectController extends Controller
@@ -107,4 +109,24 @@ class ProjectController extends Controller
         return $this->render(':Admin:gestion_projets.html.twig', array('form' => $form->createView()));
     }
 
+    /**
+     * @Route("/filtre", name="filtre-projets")
+     */
+    public function filtreAction(Request $request){
+
+        if($request->isXMLHttpRequest())
+        {
+            $category = $request->get('category');
+
+            if ($category != null)
+            {
+                $data = $this->getDoctrine()
+                    ->getManager()
+                    ->getRepository('AppBundle:Project'.$category);
+
+                return new JsonResponse($data);
+            }
+        }
+        return new Response("Nonnn ....");
+    }
 }
