@@ -1,0 +1,54 @@
+
+h2{
+    color: #db7c26;
+}
+
+section#checkbox{
+    background-color: #f7b538;
+    width: 26rem;
+    margin: auto;
+    -webkit-border-radius: 1rem;
+    border-radius: 1rem;
+}
+
+form {
+    text-align: left;
+    padding-left: 4rem;
+}
+
+figure{
+    margin: 2rem auto;
+    border: solid .2rem #db7c26;
+    -webkit-border-radius: 1rem;
+    border-radius: 1rem;
+    width: 32rem;
+    position: relative;
+}
+
+img{
+    max-height: 30rem;
+    width: auto;
+    background-size: cover;
+    border-radius: .9rem;
+}
+
+figcaption {
+    position: absolute;
+    background: rgba(255, 255, 255, .8);
+    width: 100%;
+    bottom: 23%;
+    padding: 1rem;
+    color: #d8572a;
+    font-weight: 600;
+}
+
+button{
+    padding: .8rem 1.2rem;
+    background-color: #db7c26;
+    margin: 1rem;
+}
+
+button > a{
+    color: white;
+}
+

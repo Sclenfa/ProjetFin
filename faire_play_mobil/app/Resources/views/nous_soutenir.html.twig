@@ -1,17 +1,17 @@
 {% extends "layout.html.twig" %}
 {% block content %}
+    <link href="{{ asset('css/nous_soutenir.css') }}" rel="stylesheet" type="text/css" />
     <section>
 
+        <h2>Nous soutenir</h2>
+        <h3>Nous sommes une jeune association et nous avons besoin de vos forces vives pour exister, créer et rêver ensemble !</h3>
 
-        <h2>Nous sommes une jeune association et nous avons besoin de vos forces vives pour exister, créer et rêver ensemble !</h2>
-    </section>
-
-    <section>
         <article>
             <h4>Dons financiers </h4>
             <p>Vous pouvez nous faire un don via Paypal, soit avec votre compte sur la plateforme soit par carte bancaire.
                 Le système est 100% sécurisé.</p>
         </article>
+
         <article>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <input type="hidden" name="cmd" value="_s-xclick">
@@ -21,17 +21,14 @@
                 <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
             </form>
         </article>
-    </section>
 
-    <section>
-        <article>
+        <article id="background">
             <h4>Ressourcerie matérielle</h4>
             <p>Nous avons toujours besoin de matériel de récupération pour nos créations ! Si vous avez des objets inutiles...
                 ils sont pour nous d'une importance capitale !
                 Pour nous proposer du matériel, n'hésitez pas à nous envoyer un mail à <a href="faireplaymobil@gmail.com">faireplaymobil@gmail.com</a>
             </p>
         </article>
-
 
         <article>
             <h4>Ressourcerie humaine</h4>

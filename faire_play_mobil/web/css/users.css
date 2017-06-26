@@ -1,0 +1,36 @@
+#desktop{
+    display: none;
+}
+
+h2{
+    color: #db7c26;
+    margin-bottom: 3rem;
+}
+
+.fa-paper-plane{
+    color: white;
+}
+
+button{
+    background-color: #db7c26;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th, td{
+    border-bottom: 0.2rem solid #db7c26;
+    padding: .2rem 0.5rem .2rem 0;
+}
+
+th{
+    font-weight: 600;
+}
+
+tr:nth-child(2n+2){
+    background-color: rgba(219, 124, 38, .2);
+}
