@@ -76,7 +76,7 @@
 
 .carousel .slick-dots{
     position:absolute;
-    bottom:10px;
+    bottom:5px;
     z-index: 999;
 }
 
@@ -155,10 +155,15 @@ p ~ h2{
     font-size: 2rem;
 }
 
-p ~ button{
-    background-color: #db7c26;
+p ~ button > a{
     color: white;
 }
+
+p ~ button{
+    background-color: #db7c26;
+}
+
+
 p ~ button:active{
     color: #db7c26;
     background-color: white;
@@ -190,11 +195,33 @@ main section:nth-child(4) button:active{
     background-color: #db7c26;
 }
 
-/*!* Section 4 *!*/
-/*main section:nth-child(4) h2{*/
-    /*color: #db7c26;*/
-    /*text-align: left;*/
-/*}*/
+/* Section 4 */
+main section:nth-child(5) figure{
+    margin: 1rem auto;
+    border: solid .1rem black;
+    width: 35rem;
+    -webkit-border-radius: 1rem;
+    border-radius: 1rem;
+}
+
+main section:nth-child(5) img{
+    max-height: 30rem;
+    width: auto;
+    background-size: cover;
+    -webkit-border-radius: .8rem;
+    border-radius:.8rem;
+}
+
+main section:nth-child(5) .fa-chevron-right{
+    padding-left: .4rem;
+    height: 2rem;
+    width: 2rem;
+    font-size: 1.2rem;
+}
+
+main section:nth-child(5) figcaption {
+    padding: .5rem;
+}
 
 /************************************************************************************/
 /* Media Queries */

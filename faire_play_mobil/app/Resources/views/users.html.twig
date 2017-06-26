@@ -1,19 +1,23 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
+    <link href="{{ asset('css/users.css') }}" rel="stylesheet" type="text/css" />
     <section>
+        <h2>Liste de nos membres</h2>
         <table>
             <tr>
-                <td>Nom de l'utilisateur</td>
-                <td>Email</td>
-                <td>Lieu de résidence</td>
-                <td>Description</td>
+                <th>Nom de l'utilisateur</th>
+                <th>Lieu de résidence</th>
+                <th>Description</th>
+                <th></th>
             </tr>
             {% for user in users %}
                 <tr>
                     <td>{{user.username}}</td>
-                    <td>{{user.email}}</td>
-                    <td><button><a href="mailto:{{ user.email }}">Contacter</a></button></td>
+                    <td>{{user.ville}}</td>
+                    <td>{{user.description}}</td>
+                    <td id="desktop"><button><a href="mailto:{{ user.email }}">Contacter</a></button></td>
+                    <td><button><a href="mailto:{{ user.email }}"class="fa fa-paper-plane" aria-hidden="true"></a></button></td>
                 </tr>
             {% endfor %}
         </table>
