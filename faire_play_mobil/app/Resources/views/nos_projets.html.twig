@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    {#<link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />#}
+    <link href="{{ asset('css/nos_projets.css') }}" rel="stylesheet" type="text/css" />
 
 <section>
     <h2>Nos projets</h2>
@@ -35,7 +35,8 @@
     {% for project in projects %}
         <figure>
             <img src="{{ asset('img/' ~ project.photo) }} " alt="Projet">
-            <figcaption>{{ project.id }}<button><a href="{{ path('fiche', {projectId: project.id}) }}">Afficher les détails</a></button></figcaption>
+            <figcaption>{{ project.name }}</figcaption>
+            <button><a href="{{ path('fiche', {projectId: project.id}) }}">Afficher les détails</a></button>
         </figure>
     {% endfor %}
 </section>

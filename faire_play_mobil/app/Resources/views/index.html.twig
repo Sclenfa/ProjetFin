@@ -110,8 +110,10 @@
 
         {% for project in projects %}
             <figure>
+                <a  href="{{ path('nos-projets') }}">
                 <img src="{{ asset('img/'~project.photo) }}" alt="{{ project.name }}">
-                <figcaption><a href="{{ path('nos-projets') }}">{{ project.name }}</a></figcaption>
+                <figcaption>{{ project.name }}<i class="fa fa-chevron-right" aria-hidden="true"></i></figcaption>
+                </a>
             </figure>
         {% endfor %}
 

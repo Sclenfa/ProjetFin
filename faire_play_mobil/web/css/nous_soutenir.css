@@ -1,0 +1,26 @@
+h3{
+    margin-bottom: 5rem;
+}
+
+h4{
+    color: #db7c26;
+    font-weight: 600;
+}
+
+main article {
+    margin-bottom: 4rem;
+}
+
+article#background{
+    background-color: #db7c26;
+    padding: 2rem;
+}
+
+article#background h4{
+   color: #f7b538;
+}
+
+article#background p{
+    color: white;
+}
+
