@@ -1,0 +1,27 @@
+h2{
+    color: #db7c26;
+    margin-bottom: 5rem;
+}
+
+figure + p{
+    font-style: italic;
+}
+
+li{
+    text-decoration: none;
+    display: block;
+    color: #db7c26;
+}
+
+h3{
+    color: #db7c26;
+    margin-bottom:4rem;
+}
+
+button{
+    background-color: #db7c26;
+}
+
+button > a{
+    color: white;
+}

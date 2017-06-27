@@ -2,19 +2,9 @@
 
 
 {% block content %}
-    <section>
+    <link href="{{ asset('css/profil.css') }}" rel="stylesheet" type="text/css" />
+<section>
     <h2>Bonjour {{ user.username }}</h2>
-
-        <h3>Bonjour '#'</h3>
-    </section>
-
-    <section>
-        <h4>Voici vos informations de profil : </h4>
-
-
-        <p>Votre email : '  '</p>
-        <p>Vos projets en cours : ' '</p>
-    </section>
 
     <p>Votre Email : {{ user.email }}</p>
     <p>Votre Ville : {{ user.ville }}</p>
@@ -22,4 +12,5 @@
 
     <button><a href="{{ absolute_url('profile/edit') }}">Modification du profil</a></button>
     <button><a href="{{ absolute_url('profile/change-password') }}">Changer de Mot de Passe</a></button>
+</section>
 {% endblock %}
