@@ -64,6 +64,8 @@ class PropositionController extends Controller
 
                 $mailer->send($message);
 
+                $this->addFlash('greeting','Merci d\'avoir proposé un projet !');
+
                 return $this ->redirectToRoute('nos-projets');
 
             }

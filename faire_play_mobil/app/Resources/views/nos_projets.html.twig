@@ -11,21 +11,23 @@
 </section>
 
 <section id="checkbox">
+    <form method="GET">
+
     <p>Catégories :</p>
-        <form method="post" action="">
-            {% for project in projects %}
-                <input type="checkbox" name="category" value="{{ project.category }}">{{ project.category }}<br>
-            {% endfor %}
-            <input type="checkbox" name="select-all" value="select-all"> Toutes les catégories<br>
 
-            <p>Statut :</p>
-            <input type="checkbox" name="statut" value="en_cours"> En cours<br>
-            <input type="checkbox" name="statut" value="terminé"> Terminé<br>
-            <input type="checkbox" name="select-all" value="select-all"> Tous les projets<br>
+        <input type="checkbox" name="category[]" value="arts_plastiques"> Arts plastiques<br>
+        <input type="checkbox" name="category[]" value="performance"> Performance<br>
+        <input type="checkbox" name="category[]" value="ateliers"> Ateliers<br>
+        <input type="checkbox" name="category[]" value="photographie"> Photographie<br>
 
-            <input type="submit" id="rechercher" name="Rechercher" value="Rechercher">
-        </form>
-    </section>
+     <p>Statut :</p>
+
+        <input type="checkbox" name="statut[]" value="en_cours"> En cours<br>
+        <input type="checkbox" name="statut[]" value="terminer"> Terminé<br>
+
+        <input type="submit" name="Rechercher" value="Rechercher">
+    </form>
+</section>
     <br>
 
 <section>
@@ -37,6 +39,5 @@
         </figure>
     {% endfor %}
 </section>
-
 {% endblock %}
 

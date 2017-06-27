@@ -6,6 +6,7 @@ namespace AppBundle\Controller;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 
 class ProjectController extends Controller
@@ -16,20 +17,25 @@ class ProjectController extends Controller
      * @param EntityManagerInterface $em
      * @Route("/nos-projets", name="nos-projets")
      */
-    public function allProjectAction(EntityManagerInterface $em)
+    public function allProjectAction(Request $request, EntityManagerInterface $em)
     {
-        $projects = $em->getRepository('AppBundle:Project')
-            ->findAll();
+        $categories = $request->query->get('category');
 
-        if (!$projects) {
-            throw $this->createNotFoundException(
-                'Aucun projet trouvé '
-            );
-        } else {
-            return $this->render('nos_projets.html.twig', ['projects' => $projects]);
+        if (empty($categories)) {
+            $categories = [];
         }
-    }
+
+        $statuses = $request->query->get('statut');
+
+        if (empty($statuses)) {
+            $statuses = [];
+        }
+
+        $projectRepository = $this->getDoctrine()->getRepository('AppBundle:Project');
+
+        $projects = $projectRepository->findByCategoriesAndStatuses($categories, $statuses);
+
+        return $this->render('nos_projets.html.twig', ['projects' => $projects]);
 
     }
-
 }
