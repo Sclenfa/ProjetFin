@@ -13,12 +13,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class AdminProjectController extends Controller
 {
-    /**
-     * @Route ("/admin/gestion_projets", name="gestion_projets")
-     */
-    public function projetAction(){
-        return $this-> render(':Admin:gestion_projets.html.twig');
-    }
 
     /**
      * @Route("/gestion_projets", name="gestion_projets")
