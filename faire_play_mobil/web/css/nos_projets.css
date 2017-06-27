@@ -52,3 +52,10 @@ button > a{
     color: white;
 }
 
+@media only screen and (min-width: 750px) {
+    figure{
+        display: inline-block;
+        max-width: 33%;
+    }
+}
+

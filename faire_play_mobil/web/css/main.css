@@ -107,7 +107,7 @@ header {
 
 header img{
     max-width: 50%;
-    transform: translate(-15%, 10%);
+    transform: translate(-10%, 10%);
     display: inline-block;
     margin-right: 6rem;
 }
@@ -213,6 +213,77 @@ footer h2{
      margin: 3rem;
  }
 
+/************************************************************************************/
+/* Media Queries */
+@media only screen and (min-width: 750px) {
+    header, main {
+        max-width: 70%;
+        margin: auto;
+    }
+
+    header img{
+        max-width: 35rem;
+        transform: translate(-50%,5%);
+    }
+
+    #login{
+        transform: translate(100%,-105%);
+    }
+
+    #nav{
+        display: inline-block;
+        margin: 3rem auto;
+        max-height: 10rem;
+        background-color: #db7c26;
+        padding: 2rem;
+        width: 100%;
+    }
+
+    #burger {
+        display: none;
+    }
+
+    #nav ul{
+        background-color: #db7c26;
+        margin: 0rem;
+
+    }
+
+    #nav li {
+        display: inline-block;
+        margin: 0;
+    }
+
+    #nav li:first-child{
+        margin: 0;
+        background: rgba(255, 255, 255, 0);
+    }
+
+    #nav li:last-child{
+        margin: 0;
+    }
+
+    #nav a{
+        font-size: 1.5rem;
+        padding: 0 1.5rem 0 0;
+        border-right: .1rem solid white;
+        vertical-align: middle;
+    }
+
+    #nav a:hover{
+        color: #c32f27;
+    }
+
+    aside{
+        display: none;
+    }
+
+    section{
+        max-width: 70%;
+        margin: 5rem auto;
+    }
+
+} /*Fin des media queries*/
 
 
 
