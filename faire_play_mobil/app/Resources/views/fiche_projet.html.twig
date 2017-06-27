@@ -1,25 +1,32 @@
 {% extends "layout.html.twig" %}
 {% block content %}
-
     <link href="{{ asset('css/fiche_projet.css') }}" rel="stylesheet" type="text/css" />
-
     <section>
-
         <article>
         <h2>{{ project.name }}</h2>
-
+        <h3>Catégorie : {{ project.category }}</h3>
         <p>{{ project.description }}</p>
+        </article>
+
+        <article class="picto">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+            <p>{{ project.address }} {{ project.cp }} {{ project.city }}</p>
+
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <p>Du : 20 juin 2010</p>
+            <p>Au : 20 juin 2011</p>
+            {#<p>Du :{{ project.dateBegin}}</p>#}
+            {#<p>Au :{{ project.dateEnd}}</p>#}
+
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <p>{{ project.participant }}</p>
 
         </article>
-        <article>
-            <h3>Localisation : <p>{{ project.address }} {{ project.cp }} {{ project.city }}</p></h3>
 
-            <h3>Catégorie de projet : <p>{{ project.category }}</p></h3>
+        <button><a href="{{ path('nous-soutenir') }}">Nous Soutenir</a></button>
+    </section >
 
-            <h3>Nombre de participants au projet : <p>{{ project.participant }}</p></h3>
-            <button><a href="">Nous Soutenir</a></button>
-        </article>
-    </section>
+    <section id="button">
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         {% if project.statut == "en_cours" %}
             <button><a href="{{ path('participer', {projectId: project.id}) }}">Participer</a></button>
@@ -36,6 +43,8 @@
             <button><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></button>
         {% endif %}
     {% endif %}
+    </section>
+
 
     <img src="{{ asset('img/' ~ project.photo) }} " alt="{{ project.name }}">
 
