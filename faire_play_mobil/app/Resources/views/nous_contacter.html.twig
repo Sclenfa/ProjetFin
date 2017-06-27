@@ -2,43 +2,31 @@
 {% block content %}
     <section>
         <h2>Contactez-moi</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
     </section>
 
     <section>
-        <form action="post">
+        {{ form_errors(form) }}
 
-            <article>
-                <label for="userName">Votre nom<b></b></label>
-                <input type="text" id="userName" name="name">
-            </article>
+        {{ form_start(form) }}
 
-            <article>
-                <label for="userEmail">Votre E-mail<b></b></label>
-                <input type="email" id="userEmail" name="email">
-            </article>
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
 
-            <article>
-                <label for="userSubject">Choisir un sujet<b></b></label>
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
 
-                <select id="userSubject" name="subject">
-                    <option value="null">- Sélectionner -</option>
-                    <option value="infoasso">Informations sur l'association</option>
-                    <option value="infoprojet">Informations sur les projets</option>
-                    <option value="infosite">Problème sur le site</option>
-                </select>
-            </article>
+        {{ form_label(form.sujet) }}
+        {{ form_widget(form.sujet) }}
 
-            <article>
-                <label for="userMessage">Votre message<b></b></label>
-                <textarea id="userMessage" name="message"></textarea>
+        {{ form_label(form.message) }}
+        {{ form_widget(form.message) }}
 
-                <p><input type="checkbox">Accepter les CG<b></b></p>
-            </article>
+        {{ form_label(form.cgu) }}
+        {{ form_widget(form.cgu) }}
 
-            <input type="submit" value="Envoyer">
+        {{ form_widget(form.envoyer) }}
 
-        </form>
+        {{ form_end(form) }}
     </section>
 
     <!-- Modale pour remercier l'utilisateur -->

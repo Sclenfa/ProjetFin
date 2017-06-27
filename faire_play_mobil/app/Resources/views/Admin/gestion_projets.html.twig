@@ -10,8 +10,8 @@
             <th>Ville</th>
             <th>Adress</th>
             <th>Code Postal</th>
-            {#<th>Date de début</th>#}
-            {#<th>Date de fin</th>#}
+            <th>Date de début</th>
+            <th>Date de fin</th>
             <th>Categorie</th>
             <th>Photo</th>
             <th>Nombre de Participant</th>
@@ -25,8 +25,8 @@
             <td>{{ project.city }}</td>
             <td>{{ project.address }}</td>
             <td>{{ project.cp }}</td>
-            {#<td>{{ project.dateBegin }}</td>#}
-            {#<td>{{ project.dateEnd }}</td>#}
+            <td>{{ project.dateBegin|date('d-m-Y') }}</td>
+            <td>{{ project.dateEnd|date('d-m-Y') }}</td>
             <td>{{ project.category }}</td>
             <td>{{ project.photo }}</td>
             <td>{{ project.participant }}</td>

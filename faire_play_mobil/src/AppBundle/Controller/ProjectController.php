@@ -6,6 +6,7 @@ namespace AppBundle\Controller;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 
 class ProjectController extends Controller
@@ -16,18 +17,25 @@ class ProjectController extends Controller
      * @param EntityManagerInterface $em
      * @Route("/nos-projets", name="nos-projets")
      */
-    public function allProjectAction(EntityManagerInterface $em)
+    public function allProjectAction(Request $request, EntityManagerInterface $em)
     {
-        $query = $em->createQuery(
-            "SELECT p
-                FROM AppBundle:Project p
-                WHERE p.statut <> :statut"
-        )->setParameter('statut', 'en_attente');
+        $categories = $request->query->get('category');
 
-        $projects = $query->getResult();
+        if (empty($categories)) {
+            $categories = [];
+        }
 
+        $statuses = $request->query->get('statut');
 
-                    return $this->render('nos_projets.html.twig', ['projects' => $projects]);
+        if (empty($statuses)) {
+            $statuses = [];
+        }
+
+        $projectRepository = $this->getDoctrine()->getRepository('AppBundle:Project');
+
+        $projects = $projectRepository->findByCategoriesAndStatuses($categories, $statuses);
+
+        return $this->render('nos_projets.html.twig', ['projects' => $projects]);
 
     }
 }
