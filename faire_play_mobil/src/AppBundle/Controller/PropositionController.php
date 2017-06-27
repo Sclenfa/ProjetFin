@@ -70,6 +70,9 @@ class PropositionController extends Controller
 
             }
         }
+
         return $this->render('proposer_un_projet.html.twig', array('form' => $form->createView()));
+
+
     }
 }
