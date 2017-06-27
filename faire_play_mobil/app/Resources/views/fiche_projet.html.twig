@@ -13,10 +13,8 @@
             <p>{{ project.address }} {{ project.cp }} {{ project.city }}</p>
 
             <i class="fa fa-calendar" aria-hidden="true"></i>
-            <p>Du : 20 juin 2010</p>
-            <p>Au : 20 juin 2011</p>
-            {#<p>Du :{{ project.dateBegin}}</p>#}
-            {#<p>Au :{{ project.dateEnd}}</p>#}
+            <p>Du : {{ project.dateBegin|date('d-m-Y')}}</p>
+            <p>Au : {{ project.dateEnd|date('d-m-Y')}}</p>
 
             <i class="fa fa-users" aria-hidden="true"></i>
             <p>{{ project.participant }}</p>
@@ -24,7 +22,7 @@
         </article>
 
         <button><a href="{{ path('nous-soutenir') }}">Nous Soutenir</a></button>
-    </section >
+    </section>
 
     <section id="button">
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
@@ -45,7 +43,7 @@
     {% endif %}
     </section>
 
-
     <img src="{{ asset('img/' ~ project.photo) }} " alt="{{ project.name }}">
+
 
 {% endblock %}

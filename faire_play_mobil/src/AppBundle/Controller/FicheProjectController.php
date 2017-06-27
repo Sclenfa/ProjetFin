@@ -12,6 +12,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Project;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Swift_Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class FicheProjectController extends Controller
@@ -35,8 +36,6 @@ class FicheProjectController extends Controller
                 echo 'Bonjour ' . $user  . ', vous participez déjà à ce projet.';
             };
         }
-
-
         return $this->render('fiche_projet.html.twig', ['project' => $project]);
     }
 
@@ -50,11 +49,31 @@ class FicheProjectController extends Controller
 
         /** @var Project */
         $project = $em->getRepository('AppBundle:Project')->find($projectId);
+        $user = $this->getUser();
 
         $participant = $project->getParticipant();
         $project->setParticipant($participant + 1);
 
             $project->addUser($this->getUser());
+
+        $mailer = $this->get('mailer');
+        $message = new Swift_Message('Participation au projet '. $project->getName());
+
+        $messageBody = <<<EOS
+        <h1>Bonjoir, </h1>
+        <p> Félicitations ! Vous avez un participant de plus à votre projet.
+         Vous pouvez désormais prendre contact en lui envoyant directement un mail : {$user->getEmail()}</p>
+EOS;
+
+
+        $message
+            ->setFrom('sclenfa@hotmail.fr')
+            ->setTo('emma.carre@gmail.com')
+            ->setBody($messageBody,
+                'text/html'
+            );
+
+        $mailer->send($message);
 
         $em->persist($project);
         $em->flush();
