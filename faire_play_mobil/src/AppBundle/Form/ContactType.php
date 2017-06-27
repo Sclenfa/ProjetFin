@@ -9,11 +9,14 @@
 namespace AppBundle\Form;
 
 
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class ContactType
+class ContactType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -24,12 +27,12 @@ class ContactType
                     'choices'  => array(
                         'Information sur l\'association' => 'information_association',
                         'Information sur les projets' => 'information_projet',
-                        'Performance' => 'performance',
-                        'Ateliers' => 'ateliers',
+                        'Problème sur le site' => 'probleme_site',
                     )
                 )
             )
-            ->add('votre_message')
+            ->add('message', TextareaType::class)
+            ->add('cgu', CheckboxType::class)
             ->add('envoyer', SubmitType::class)
         ;
     }
