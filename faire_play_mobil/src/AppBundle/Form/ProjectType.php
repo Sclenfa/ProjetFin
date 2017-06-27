@@ -17,6 +17,7 @@ class ProjectType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('email')
             ->add('description')
             ->add('address')
             ->add('cp')

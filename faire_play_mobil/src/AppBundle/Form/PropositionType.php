@@ -8,14 +8,12 @@
 
 namespace AppBundle\Form;
 
-use AppBundle\Entity\Project;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class PropositionType extends AbstractType
 {
@@ -23,6 +21,7 @@ class PropositionType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('email')
             ->add('description')
             ->add('address')
             ->add('cp')
