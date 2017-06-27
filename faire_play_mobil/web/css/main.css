@@ -119,12 +119,14 @@ header img{
 }
 
 #login li{
-    list-style: none
+    list-style: none;
+    font-size: 1.5rem;
+    margin: .5rem;
 }
 
-/*#login li{
-    display: none;
-}*/
+#login li a {
+    font-size: 1.8rem;
+}
 
 /* nav menu */
 #nav{

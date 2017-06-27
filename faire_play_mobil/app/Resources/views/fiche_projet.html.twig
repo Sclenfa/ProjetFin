@@ -25,6 +25,8 @@
 
         <button><a href="{{ path('nous-soutenir') }}">Nous Soutenir</a></button>
     </section>
+
+    <section id="button">
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         {% if project.statut == "en_cours" %}
             <button><a href="{{ path('participer', {projectId: project.id}) }}">Participer</a></button>
@@ -41,6 +43,7 @@
             <button><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></button>
         {% endif %}
     {% endif %}
+    </section>
 
     <img src="{{ asset('img/' ~ project.photo) }} " alt="{{ project.name }}">
 
