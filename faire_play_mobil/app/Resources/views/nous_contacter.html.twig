@@ -5,7 +5,7 @@
         <h2>Contactez-moi</h2>
     </section>
 
-    <section>
+    <a>
         {{ form_errors(form) }}
 
         {{ form_start(form) }}
@@ -22,7 +22,7 @@
         {{ form_label(form.message) }}
         {{ form_widget(form.message) }}
 
-        {{ form_label(form.cgu) }}
+        <a href="{{ 'mentions' }}"{{ form_label(form.cgu) }}</a>
         {{ form_widget(form.cgu) }}
 
         {{ form_widget(form.envoyer) }}
