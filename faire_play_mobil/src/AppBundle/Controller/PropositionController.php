@@ -64,8 +64,6 @@ class PropositionController extends Controller
 
                 $mailer->send($message);
 
-
-                //return new Response('Merci !');
                 return $this ->redirectToRoute('nos-projets');
 
             }

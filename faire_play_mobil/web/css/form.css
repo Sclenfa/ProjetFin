@@ -1,0 +1,13 @@
+h2, label{
+    color: #db7c26;
+}
+
+label, textarea, input{
+    display: block;
+    margin: .5rem auto;
+    padding: .5rem;
+}
+
+[type="submit"]{
+    padding: .5rem 2.5rem;
+}

@@ -2,8 +2,9 @@
 
 
 {% block content %}
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet" type="text/css" />
     <section>
-        <h3>Formulaire d'ajout de projets</h3>
+        <h2>Formulaire d'ajout de projets</h2>
 
         <p>
             Chez Faire Play Mobile, la philosophie est simple : nos projets s'articulent autour de l'humain, du respect de l'environnement, et de l'innovation. Recyclons les vieilles choses pour en faire « des objets inutiles mais d'une importance capitale ! »
@@ -16,6 +17,9 @@
 
             {{ form_label(form.name) }}
             {{ form_widget(form.name) }}
+
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email) }}
 
             {{ form_label(form.description) }}
             {{ form_widget(form.description) }}
