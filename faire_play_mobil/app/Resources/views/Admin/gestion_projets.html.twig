@@ -6,7 +6,7 @@
     <table>
         <tr>
             <th>Nom</th>
-            <th>Description</th>
+            <th id="description">Description</th>
             <th>Ville</th>
             <th>Adress</th>
             <th>Code Postal</th>
@@ -21,7 +21,7 @@
     {% for project in projects %}
         <tr>
             <td>{{ project.name }}</td>
-            <td>{{ project.description }}</td>
+            <td id="description">{{ project.description }}</td>
             <td>{{ project.city }}</td>
             <td>{{ project.address }}</td>
             <td>{{ project.cp }}</td>

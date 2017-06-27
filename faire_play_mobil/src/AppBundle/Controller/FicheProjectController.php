@@ -37,9 +37,6 @@ class FicheProjectController extends Controller
             };
         }
 
-        $map = new Map();
-        $map->setAutoZoom(false);
-
 
         return $this->render('fiche_projet.html.twig', ['project' => $project]);
     }

@@ -34,3 +34,17 @@ th{
 tr:nth-child(2n+2){
     background-color: rgba(219, 124, 38, .2);
 }
+
+/************************************************************************************/
+/* Media Queries */
+@media only screen and (min-width: 750px) {
+    section:nth-child(2){
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+     }
+
+    table{
+        margin: auto;
+    }
+}

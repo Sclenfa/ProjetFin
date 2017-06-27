@@ -44,3 +44,17 @@ img{
 #button button{
     background-color: #db7c26;
 }
+/************************************************************************************/
+/* Media Queries */
+@media only screen and (min-width: 750px) {
+    section + img{
+        max-height:50rem;
+        max-width:80%;
+        margin:1.5rem auto;
+    }
+
+    section#button{
+        padding: 0;
+        margin: auto;
+    }
+}
