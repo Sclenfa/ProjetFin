@@ -1,0 +1,41 @@
+h2,h3{
+    color: #db7c26;
+}
+
+h3 + p{
+    padding: 3rem .5rem;
+}
+
+.picto{
+    background-color: #f7b538;
+    width: 26rem;
+    margin: auto;
+    -webkit-border-radius: 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.picto .fa{
+    display: block;
+    font-size: 4rem;
+    margin: 1rem auto;
+}
+
+article ~ button > a{
+    font-size: 1.6rem;
+}
+
+article + button{
+    background-color: #f7b538;
+    margin: 1rem;
+    padding: .5rem 7rem;
+}
+
+[attr*=nous-soutenir]{
+    font-size: 10rem;
+}
+
+img{
+    max-width: 80%;
+    margin: 1.5rem auto;
+}
