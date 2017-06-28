@@ -1,6 +1,13 @@
 {% extends "layout.html.twig" %}
 {% block content %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link href="{{ asset('css/fiche_projet.css') }}" rel="stylesheet" type="text/css" />
+    <style>
+        #map{
+            height:400px;
+            width:100%;
+        }
+    </style>
     <section>
         <article>
         <h2>{{ project.name }}</h2>
@@ -27,7 +34,11 @@
     <section id="button">
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         {% if project.statut == "en_cours" %}
-            <button><a href="{{ path('participer', {projectId: project.id}) }}">Participer</a></button>
+            {% if project.hasUser(app.user) %}
+                <p>Votre participation a déjà été enregistrée.</p>
+            {% else %}
+                <button><a href="{{ path('participer', {projectId: project.id}) }}">Participer</a></button>
+            {% endif %}
         {% elseif project.statut == "terminer" %}
             <p>Ce projet est terminé :</p>
             <button><a href="{{ path('nos-projets') }}">Retourner à la liste des projets</a></button>
@@ -44,8 +55,22 @@
     </section>
 
     <img src="{{ asset('img/' ~ project.photo) }} " alt="{{ project.name }}">
+    <div id="map"></div>
 
-    {{ ivory_google_map(map) }}
-    {{ ivory_google_api([map]) }}
 
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        var projectLocation = '{{ project.address }} {{ project.cp }} {{ project.city }}';
+    </script>
+    <script src="{{ asset('js/maps.js') }}"></script>
+
+
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeo_2NH70yX-yHGMr48vcTMyaKi5QUulc&callback=initMap">
+    </script>
 {% endblock %}

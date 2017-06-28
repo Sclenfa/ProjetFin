@@ -83,12 +83,16 @@
                 <a href="{{ path('plan_site') }}">Plan de site</a>
             </article>
     </footer>
-    {# Carousel #}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
-    <script src="{{ asset('js/carousel.js') }}"></script>
-    {# Burger #}
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/burger.js') }}"></script>
+    {# Maps #}
+
+    {% block javascripts %}
+        {# Carousel #}
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
+        <script src="{{ asset('js/carousel.js') }}"></script>
+        {# Burger #}
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="{{ asset('js/burger.js') }}"></script>
+    {% endblock %}
 </body>
 </html>

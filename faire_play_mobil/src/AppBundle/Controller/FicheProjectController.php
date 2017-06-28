@@ -11,7 +11,6 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Project;
 use Doctrine\ORM\EntityManagerInterface;
-use Ivory\GoogleMap\Map;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -30,16 +29,6 @@ class FicheProjectController extends Controller
                 'Aucun projet trouvé' . $projectId
             );
         }
-
-        foreach ($project->getUsers() as $user) {
-            if($user->getId()){
-                echo 'Bonjour ' . $user  . ', vous participez déjà à ce projet.';
-            };
-        }
-
-        $map = new Map();
-        $map->setAutoZoom(false);
-
 
         return $this->render('fiche_projet.html.twig', ['project' => $project]);
     }
