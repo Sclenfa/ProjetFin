@@ -35,4 +35,5 @@ $(document).ready(function(){
         }
 
     });
+
 }); // Fin de la fonction d'attente de chargement du DOM
