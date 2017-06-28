@@ -67,7 +67,7 @@ EOS;
 
 
         $message
-            ->setFrom('sclenfa@hotmail.fr')
+            ->setFrom('toto.lopez.45@gmail.com')
             ->setTo('emma.carre@gmail.com')
             ->setBody($messageBody,
                 'text/html'
