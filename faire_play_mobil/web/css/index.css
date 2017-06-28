@@ -300,6 +300,9 @@ main section:nth-child(5) .fa-chevron-right{
     }
 }
 
+
+
+
 @media only screen and (max-width: 650px) {
     .carousel .item .overlay{
         position: relative;
