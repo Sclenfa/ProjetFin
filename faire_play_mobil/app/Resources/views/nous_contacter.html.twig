@@ -1,6 +1,6 @@
 {% extends "layout.html.twig" %}
 {% block content %}
-    <link href="{{ asset('css/bio.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet" type="text/css" />
     <section>
         <h2>Contactez-moi</h2>
 
@@ -20,7 +20,7 @@
         {{ form_label(form.message) }}
         {{ form_widget(form.message) }}
 
-        <a href="{{ 'mentions' }}">{{ form_label(form.cgu) }}</a>
+        <a href="{{ 'mentions' }}"{{ form_label(form.cgu) }}</a>
         {{ form_widget(form.cgu) }}
 
         {{ form_widget(form.envoyer) }}

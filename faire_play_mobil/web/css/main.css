@@ -291,6 +291,10 @@ footer h2{
         margin: 1rem auto;
     }
 
+    footer .fa {
+        font-size: 3rem;
+    }
+
 } /*Fin des media queries*/
 
 
