@@ -32,11 +32,13 @@
 
 <section>
     {% for project in projects %}
+        {% if project.statut != 'en_attente' %}
         <figure>
             <img src="{{ asset('img/' ~ project.photo) }} " alt="Projet">
             <figcaption>{{ project.name }}</figcaption>
             <button><a href="{{ path('fiche', {projectId: project.id}) }}">Afficher les détails</a></button>
         </figure>
+        {% endif %}
     {% endfor %}
 </section>
 {% endblock %}
