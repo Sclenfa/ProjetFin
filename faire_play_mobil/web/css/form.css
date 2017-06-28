@@ -18,11 +18,25 @@ label{
 }
 
 /* CGU */
+p{
+    text-align: justify;
+}
+
 a.required{
     font-weight: 700;
+    font-size: 2rem;
 }
 
 a.required:hover{
+    color: #db7c26;
+}
+
+div>a{
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+div>a:hover{
     color: #db7c26;
 }
 

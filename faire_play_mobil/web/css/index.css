@@ -197,17 +197,17 @@ main section:nth-child(4) button:active{
 
 /* Section 4 */
 main section:nth-child(5) figure{
-    /*margin: 1rem auto;*/
+    margin: 1rem auto;
     border: solid .1rem black;
-    width: 29%;
+    width: 65%;
     -webkit-border-radius: 1rem;
     border-radius: 1rem;
 }
 
 main section:nth-child(5) img{
-    /*max-height: 30rem;*/
-    /*width: auto;*/
-    /*background-size: cover;*/
+    max-height: 20rem;
+    width: auto;
+    background-size: cover;
     -webkit-border-radius: .8rem;
     border-radius:.8rem;
 }
@@ -219,9 +219,9 @@ main section:nth-child(5) .fa-chevron-right{
     font-size: 1.2rem;
 }
 
-/*main section:nth-child(5) figcaption {*/
-    /*padding: .5rem;*/
-/*}*/
+main section:nth-child(5) figcaption {
+    padding: .5rem;
+}
 
 /************************************************************************************/
 /* Media Queries */
@@ -289,14 +289,14 @@ main section:nth-child(5) .fa-chevron-right{
         margin: 1rem;
         border: solid .1rem rgba(17, 16, 16, .1);
         display: inline-block;
-        max-width: 27%;
+        max-width: 29%;
         height: 17rem;
         vertical-align: top;
         background-color: rgba(21, 20, 20, 0.05);
     }
 
     main section:nth-child(5) img{
-        max-height: 11rem;
+        max-height: 12rem;
     }
 }
 

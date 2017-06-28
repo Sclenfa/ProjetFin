@@ -11,6 +11,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -25,7 +26,7 @@ class PropositionType extends AbstractType
             ->add('email', TextType::class, ['label' => 'Email'])
             ->add('description', TextType::class, ['label' => 'Description'])
             ->add('address', TextType::class, ['label' => 'Adresse'])
-            ->add('cp', TextType::class, ['label' => 'Code Postal'])
+            ->add('cp', IntegerType::class, ['label' => 'Code Postal'])
             ->add('date_begin',  DateType::class, array('widget' => 'single_text', 'label' => 'Date de début'))
             ->add('date_end',  DateType::class, array('widget' => 'single_text', 'label' => 'Date de fin'))
             ->add('category', ChoiceType::class, array(
