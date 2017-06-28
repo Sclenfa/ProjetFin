@@ -2,7 +2,11 @@
 <link href="{{ asset('css/form.css') }}" rel="stylesheet" type="text/css" />
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
     {{ form_widget(form) }}
+
+
+
     <div>
+        <a href="{{ path('mentions') }}">CGU</a><input type="checkbox">
         <input type="submit" value="{{ 'registration.submit'|trans }}" />
     </div>
 {{ form_end(form) }}
