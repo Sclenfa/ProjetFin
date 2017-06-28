@@ -9,8 +9,8 @@
 
 .carousel{
     width:100%;
-    max-width:1280px;
-    max-height:600px;
+    max-width:427px;
+    max-height:300px;
     font-family: 'Open Sans', sans-serif;
 }
 .carousel .item {
@@ -225,46 +225,9 @@ main section:nth-child(5) figcaption {
 
 /************************************************************************************/
 /* Media Queries */
-@media only screen and (min-width: 901px) and (max-width: 1100px) {
-    .carousel {
-        max-height:600px;
-    }
-    .carousel .item .imageContainer{
-        max-height:600px;
-    }
 
-    .carousel .item .overlay{
-        padding-bottom: 55px;
-    }
-    .carousel .item .overlay h3{
-        width: 80%;
-        font-size: 34px;
-        line-height: 40px;
-        padding-bottom:10px;
-    }
-    .carousel .item .overlay p{
-        width: 65%;
-        font-size:15px;
-        line-height: 25px;
-    }
-}
 
-@media only screen and (min-width: 651px) and (max-width: 900px) {
-    .carousel .item .overlay{
-        padding-bottom: 50px;
-    }
-    .carousel .item .overlay h3{
-        width: 80%;
-        font-size: 26px;
-        line-height: 30px;
-        padding-bottom:10px;
-    }
-    .carousel .item .overlay p{
-        width: 70%;
-        font-size:14px;
-        line-height: 20px;
-    }
-}
+
 
 @media only screen and (max-width: 650px) {
     .carousel .item .overlay{
