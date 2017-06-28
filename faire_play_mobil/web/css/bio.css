@@ -42,4 +42,10 @@ button > a{
     section{
         margin:0 auto;
     }
+
+    p{
+        margin: 1.5rem auto;
+        width: 80%;
+        text-align: justify;
+    }
 }
