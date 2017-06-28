@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProjectRepository")
  * @ORM\Table(name="projects")
  */
 class Project
@@ -165,6 +165,22 @@ class Project
     {
         $this->users = $users;
         return $this;
+    }
+
+    public function addUser(User $user)
+    {
+        $this->users[] = $user;
+        $user->addProject($this);
+    }
+
+    public function hasUser(User $user)
+    {
+        foreach ($this->getUsers() as $projectUser) {
+            if($user->getId() == $projectUser->getId()){
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

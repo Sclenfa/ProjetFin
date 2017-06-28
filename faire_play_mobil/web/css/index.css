@@ -9,8 +9,8 @@
 
 .carousel{
     width:100%;
-    max-width:427px;
-    max-height:300px;
+    max-width:1280px;
+    max-height:600px;
     font-family: 'Open Sans', sans-serif;
 }
 .carousel .item {
@@ -197,17 +197,17 @@ main section:nth-child(4) button:active{
 
 /* Section 4 */
 main section:nth-child(5) figure{
-    margin: 1rem auto;
+    /*margin: 1rem auto;*/
     border: solid .1rem black;
-    width: 35rem;
+    width: 29%;
     -webkit-border-radius: 1rem;
     border-radius: 1rem;
 }
 
 main section:nth-child(5) img{
-    max-height: 30rem;
-    width: auto;
-    background-size: cover;
+    /*max-height: 30rem;*/
+    /*width: auto;*/
+    /*background-size: cover;*/
     -webkit-border-radius: .8rem;
     border-radius:.8rem;
 }
@@ -219,12 +219,86 @@ main section:nth-child(5) .fa-chevron-right{
     font-size: 1.2rem;
 }
 
-main section:nth-child(5) figcaption {
-    padding: .5rem;
-}
+/*main section:nth-child(5) figcaption {*/
+    /*padding: .5rem;*/
+/*}*/
 
 /************************************************************************************/
 /* Media Queries */
+
+@media only screen and (min-width: 750px){
+    body{
+        background-color: #eee;
+    }
+
+    main, header{
+        background-color: white;
+    }
+
+    .carousel{
+        max-width:80%;
+        margin: auto;
+    }
+    .carousel .item .overlay{
+        padding-bottom: 50px;
+    }
+    .carousel .item .overlay h3{
+        width: 80%;
+        font-size: 26px;
+        line-height: 30px;
+        padding-bottom:10px;
+    }
+
+    .fa-chevron-right {
+        padding-left: .3rem;
+    }
+
+    .carousel .item .overlay p{
+        width: 70%;
+        font-size:14px;
+        line-height: 20px;
+    }
+
+    .overlay{
+        background: rgba(255, 255, 255, .7);
+    }
+
+    .slick-dots li button:before{
+       color: #d8572a;
+    }
+
+
+    h1{
+        margin-top: 2rem;
+    }
+
+    h2{
+        text-align: left;
+    }
+
+    .align{
+        text-align: center;
+    }
+
+    p{
+        text-align: justify;
+    }
+
+
+    main section:nth-child(5) figure{
+        margin: 1rem;
+        border: solid .1rem rgba(17, 16, 16, .1);
+        display: inline-block;
+        max-width: 27%;
+        height: 17rem;
+        vertical-align: top;
+        background-color: rgba(21, 20, 20, 0.05);
+    }
+
+    main section:nth-child(5) img{
+        max-height: 11rem;
+    }
+}
 
 
 

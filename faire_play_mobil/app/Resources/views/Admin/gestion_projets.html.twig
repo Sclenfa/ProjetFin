@@ -1,17 +1,17 @@
 {% extends '::layout.html.twig' %}
 
 {% block content %}
-    <link href="{{ asset('css/users.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet" type="text/css" />
     <h2>Gestion des projets</h2>
     <table>
         <tr>
             <th>Nom</th>
-            <th>Description</th>
+            <th id="description">Description</th>
             <th>Ville</th>
             <th>Adress</th>
             <th>Code Postal</th>
-            {#<th>Date de début</th>#}
-            {#<th>Date de fin</th>#}
+            <th>Date de début</th>
+            <th>Date de fin</th>
             <th>Categorie</th>
             <th>Photo</th>
             <th>Nombre de Participant</th>
@@ -21,12 +21,12 @@
     {% for project in projects %}
         <tr>
             <td>{{ project.name }}</td>
-            <td>{{ project.description }}</td>
+            <td id="description">{{ project.description }}</td>
             <td>{{ project.city }}</td>
             <td>{{ project.address }}</td>
             <td>{{ project.cp }}</td>
-            {#<td>{{ project.dateBegin }}</td>#}
-            {#<td>{{ project.dateEnd }}</td>#}
+            <td>{{ project.dateBegin|date('d-m-Y') }}</td>
+            <td>{{ project.dateEnd|date('d-m-Y') }}</td>
             <td>{{ project.category }}</td>
             <td>{{ project.photo }}</td>
             <td>{{ project.participant }}</td>

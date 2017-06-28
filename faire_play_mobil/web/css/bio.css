@@ -25,3 +25,21 @@ button{
 button > a{
     color: white;
 }
+
+/************************************************************************************/
+/* Media Queries */
+@media only screen and (min-width: 750px) {
+    figure > img{
+        height: 45rem;
+        margin: auto;
+    }
+
+    h2 {
+        color: #db7c26;
+        margin-bottom: 2rem;
+    }
+
+    section{
+        margin:0 auto;
+    }
+}

@@ -3,11 +3,26 @@ h2, label{
 }
 
 label, textarea, input{
-    display: block;
+   display: block;
     margin: .5rem auto;
     padding: .5rem;
 }
 
+label{
+    font-weight: 600;
+}
+
 [type="submit"]{
     padding: .5rem 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/************************************************************************************/
+/* Media Queries */
+@media only screen and (min-width: 750px) {
+    input,textarea{
+        padding: 1.5rem;
+        margin: .5rem auto;
+    }
+
 }

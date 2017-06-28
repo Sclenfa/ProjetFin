@@ -1,6 +1,13 @@
 {% extends "layout.html.twig" %}
 {% block content %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link href="{{ asset('css/fiche_projet.css') }}" rel="stylesheet" type="text/css" />
+    <style>
+        #map{
+            height:400px;
+            width:100%;
+        }
+    </style>
     <section>
         <article>
         <h2>{{ project.name }}</h2>
@@ -13,10 +20,8 @@
             <p>{{ project.address }} {{ project.cp }} {{ project.city }}</p>
 
             <i class="fa fa-calendar" aria-hidden="true"></i>
-            <p>Du : 20 juin 2010</p>
-            <p>Au : 20 juin 2011</p>
-            {#<p>Du :{{ project.dateBegin}}</p>#}
-            {#<p>Au :{{ project.dateEnd}}</p>#}
+            <p>Du : {{ project.dateBegin|date('d-m-Y')}}</p>
+            <p>Au : {{ project.dateEnd|date('d-m-Y')}}</p>
 
             <i class="fa fa-users" aria-hidden="true"></i>
             <p>{{ project.participant }}</p>
@@ -24,12 +29,16 @@
         </article>
 
         <button><a href="{{ path('nous-soutenir') }}">Nous Soutenir</a></button>
-    </section >
+    </section>
 
     <section id="button">
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         {% if project.statut == "en_cours" %}
-            <button><a href="{{ path('participer', {projectId: project.id}) }}">Participer</a></button>
+            {% if project.hasUser(app.user) %}
+                <p>Votre participation a déjà été enregistrée.</p>
+            {% else %}
+                <button><a href="{{ path('participer', {projectId: project.id}) }}">Participer</a></button>
+            {% endif %}
         {% elseif project.statut == "terminer" %}
             <p>Ce projet est terminé :</p>
             <button><a href="{{ path('nos-projets') }}">Retourner à la liste des projets</a></button>
@@ -45,7 +54,23 @@
     {% endif %}
     </section>
 
-
     <img src="{{ asset('img/' ~ project.photo) }} " alt="{{ project.name }}">
+    <div id="map"></div>
 
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        var projectLocation = '{{ project.address }} {{ project.cp }} {{ project.city }}';
+    </script>
+    <script src="{{ asset('js/maps.js') }}"></script>
+
+
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeo_2NH70yX-yHGMr48vcTMyaKi5QUulc&callback=initMap">
+    </script>
 {% endblock %}

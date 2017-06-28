@@ -1,5 +1,5 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
+<link href="{{ asset('css/form.css') }}" rel="stylesheet" type="text/css" />
 {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
     {{ form_widget(form) }}
     <div>

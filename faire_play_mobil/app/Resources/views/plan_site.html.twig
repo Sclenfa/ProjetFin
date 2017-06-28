@@ -1,0 +1,32 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+    <link href="{{ asset('css/nos_projets.css') }}" rel="stylesheet" type="text/css" />
+
+    <section>
+
+        <h1>Plan du site</h1>
+
+            <h3>Accueil</h3>
+            <ul>
+                <li><a  href="{{ path('homepage') }}">Faire Play Mobil</a></li>
+                <li><a  href="{{ path('bio') }}">Qui est Sylvain ?</a></li>
+            </ul>
+
+            <h3>Les Projets</h3>
+            <ul>
+                <li><a  href="{{ path('nos-projets') }}">Nos projets</a></li>
+                <li><a  href="{{ path('proposer-un-projet') }}">Proposer un projet</a></li>
+            </ul>
+
+            <h3>Contact</h3>
+            <ul>
+                <li><a  href="{{ path('nous-soutenir') }}">Nous soutenir</a></li>
+                <li><a  href="{{ path('nous-contacter') }}">Contactez-nous</a></li>
+            </ul>
+
+
+    </section>
+
+{% endblock %}

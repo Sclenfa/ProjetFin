@@ -9,6 +9,7 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\Entity\Project;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -27,9 +28,9 @@ class FicheProjectController extends Controller
             throw $this->createNotFoundException(
                 'Aucun projet trouvé' . $projectId
             );
-        } else {
-            return $this->render('fiche_projet.html.twig', ['project' => $project]);
         }
+
+        return $this->render('fiche_projet.html.twig', ['project' => $project]);
     }
 
     /**
@@ -40,14 +41,16 @@ class FicheProjectController extends Controller
     public function participerAction($projectId, EntityManagerInterface $em)
     {
 
+        /** @var Project */
         $project = $em->getRepository('AppBundle:Project')->find($projectId);
 
         $participant = $project->getParticipant();
         $project->setParticipant($participant + 1);
 
+            $project->addUser($this->getUser());
+
+        $em->persist($project);
         $em->flush();
-
-
 
         $this->addFlash('greeting','merci pour votre participation !');
 
