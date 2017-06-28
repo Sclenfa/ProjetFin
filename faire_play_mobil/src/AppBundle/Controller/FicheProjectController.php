@@ -31,11 +31,6 @@ class FicheProjectController extends Controller
             );
         }
 
-        foreach ($project->getUsers() as $user) {
-            if($user->getId()){
-                echo 'Bonjour ' . $user  . ', vous participez déjà à ce projet.';
-            };
-        }
         return $this->render('fiche_projet.html.twig', ['project' => $project]);
     }
 
@@ -49,7 +44,6 @@ class FicheProjectController extends Controller
 
         /** @var Project */
         $project = $em->getRepository('AppBundle:Project')->find($projectId);
-        $user = $this->getUser();
 
         $participant = $project->getParticipant();
         $project->setParticipant($participant + 1);

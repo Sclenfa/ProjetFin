@@ -173,6 +173,16 @@ class Project
         $user->addProject($this);
     }
 
+    public function hasUser(User $user)
+    {
+        foreach ($this->getUsers() as $projectUser) {
+            if($user->getId() == $projectUser->getId()){
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * @return mixed
      */
