@@ -1,0 +1,21 @@
+h1{
+    font-size: 5rem;
+}
+
+h3 {
+    color: #db7c26;
+    padding: 1rem;
+    font-size: 4rem;
+}
+
+li{
+    list-style: none;
+}
+
+li>a{
+    font-size: 2rem;
+}
+
+li>a:hover{
+    color: #db7c26;
+}
