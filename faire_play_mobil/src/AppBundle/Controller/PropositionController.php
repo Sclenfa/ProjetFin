@@ -52,8 +52,8 @@ class PropositionController extends Controller
                 $mailer = $this->get('mailer');
                 $message = new Swift_Message('Hello Email');
                 $message
-                    ->setFrom('faireplaymobil@gmail.com')
-                    ->setTo('faireplaymobil@gmail.com')
+                    ->setFrom('toto.lopez.45@gmail.com')
+                    ->setTo('toto.lopez.45@gmail.com')
                     ->attach(\Swift_Attachment::fromPath('img_directory')->setFilename($photo->getClientOriginalName()))
                     ->setBody('<h1>test</h1>'
                         /*$this->renderView(

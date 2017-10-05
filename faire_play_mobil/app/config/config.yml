@@ -70,7 +70,7 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
-    port: '%mailer_port%'
+    port: '%mailer_host%'
 #    encryption: '%mailer_encryption%'
 
 # app/config/config.yml
@@ -87,7 +87,7 @@ fos_user:
     use_username_form_type: true
     model_manager_name:     null  # change it to the name of your entity/document manager if you don't want to use the default one.
     from_email:
-        address: "contact@faire_play_mobil.fr"
+        address: "toto.lopez.45@gmail.com"
         sender_name: "faire_play_mobil"
     profile:
         form:
@@ -101,12 +101,12 @@ fos_user:
             name:               fos_user_change_password_form
             validation_groups:  [ChangePassword, Default]
     registration:
-        confirmation:
-            from_email: # Use this node only if you don't want the global email address for the confirmation email
-                address:        ...
-                sender_name:    ...
-            enabled:    false # change to true for required email confirmation
-            template:   '@FOSUser/Registration/email.txt.twig'
+#        confirmation:
+##            from_email: # Use this node only if you don't want the global email address for the confirmation email
+##                address:        toto.lopez.45@gmail.com
+##                sender_name:    Demo Registration
+#            enabled:    true # change to true for required email confirmation
+#            template:   '@FOSUser/Registration/email.txt.twig'
         form:
 #            type:               FOS\UserBundle\Form\Type\RegistrationFormType # or 'fos_user_registration' on Symfony < 2.8
             type:               AppBundle\Form\UserType
@@ -115,17 +115,18 @@ fos_user:
     resetting:
         token_ttl: 86400
         email:
-            from_email: # Use this node only if you don't want the global email address for the resetting email
-                address:        ...
-                sender_name:    ...
+#            from_email: # Use this node only if you don't want the global email address for the resetting email
+#                address:        toto.lopez.45@gmail.com
+#                sender_name:    Demo Resetting
             template:   '@FOSUser/Resetting/email.txt.twig'
         form:
             type:               FOS\UserBundle\Form\Type\ResettingFormType # or 'fos_user_resetting' on Symfony < 2.8
 #            type:               AppBundle\Form\resettingUserType
             name:               fos_user_resetting_form
             validation_groups:  [ResetPassword, Default]
+
     service:
-        mailer:                 fos_user.mailer.default
+        mailer:                 fos_user.mailer.twig_swift
         email_canonicalizer:    fos_user.util.canonicalizer.default
         username_canonicalizer: fos_user.util.canonicalizer.default
         token_generator:        fos_user.util.token_generator.default
